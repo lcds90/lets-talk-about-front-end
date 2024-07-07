@@ -1,0 +1,25 @@
+:root {
+    --blog-c-1: #7f3d88;
+    --blog-c-2: #a84ebd;
+    --blog-c-3: #c670d2;
+    --blog-c-soft: rgba(164, 78, 189, 0.14);
+    
+
+    --vp-c-brand-1: var(--blog-c-1);
+    --vp-c-brand-2: var(--blog-c-2);
+    --vp-c-brand-3: var(--blog-c-3);
+    --vp-c-brand-soft: var(--blog-c-soft);
+}
+
+.dark {
+    --blog-c-1: #9a61a2;
+    --blog-c-2: #b97cc1;
+    --blog-c-3: #d29bda;
+    --blog-c-soft: rgba(184, 140, 208, 0.14);
+    
+    --vp-c-brand-1: var(--blog-c-1);
+    --vp-c-brand-2: var(--blog-c-2);
+    --vp-c-brand-3: var(--blog-c-3);
+    --vp-c-brand-soft: var(--blog-c-soft);
+
+}

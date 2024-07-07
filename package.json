@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.3",
+    "vitepress": "^1.0.0-rc.25",
+    "vue": "^3.3.8"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
+  }
+}
