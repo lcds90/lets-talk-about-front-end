@@ -22,7 +22,7 @@ layout: home
 ---
 
 <script setup>
-import {  Welcome } from './components'
+import {  Welcome } from './views'
 </script>
 
 <Welcome />

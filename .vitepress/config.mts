@@ -4,17 +4,18 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	title: 'LCDS',
 	description: 'Blog pessoal',
-
 	head: [],
+	appearance: 'force-dark',
 	markdown: {
 		lineNumbers: true,
 	},
 	themeConfig: {
+
 		// https://vitepress.dev/reference/default-theme-config
 		search: {
 			provider: 'local',
 		},
-		nav: [
+/* 		nav: [
 			{ text: 'Home', link: '/' },
 			{
 				text: 'CSS',
@@ -25,6 +26,7 @@ export default defineConfig({
 						items: [
 							{ text: 'Flexbox', link: '/posts/css/flexbox' },
 							{ text: 'Grid', link: '/posts/css/grid' },
+							{ text: 'Clamp', link: '/posts/css/clamp' },
 						],
 					},
 				],
@@ -43,18 +45,32 @@ export default defineConfig({
 					},
 				],
 			},
-		],
+		], */
 
-/* 		sidebar: [
+		sidebar: [
 			{
-				collapsed: true,
-				text: 'Testes',
 				items: [
-					{ text: 'Unitários com Vue Jest', link: '/posts/tests/unit-tests' },
-					{ text: 'E2E com Cypress', link: '/api-examples' },
+					{
+						text: 'CSS',
+						link: '/posts/css',
+						collapsed: true,
+						items: [
+							{ text: 'Flexbox', link: '/posts/css/flexbox' },
+							{ text: 'Grid', link: '/posts/css/grid' },
+							{ text: 'Clamp', link: '/posts/css/clamp' },
+						],
+					},
 				],
 			},
-		], */
+			{
+				text: 'Testes',
+				collapsed: true,
+				items: [
+					{ link: '/posts/tests', text: 'Jest' },
+					{ link: '/posts/tests/e2e', text: 'Cypress' }
+				],
+			},
+		],
 		aside: 'left',
 		outline: {
 			label: 'Nessa página',

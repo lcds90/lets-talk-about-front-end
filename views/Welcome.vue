@@ -1,6 +1,7 @@
 <script setup lang="ts">
 	import gsap from 'gsap';
 	import { computed, onMounted, ref } from 'vue';
+	import { Card, TagLink, Text } from '../components';
 
 	const info = {
 		alt: 'Foto de Leonardo Santos',
@@ -35,13 +36,13 @@
 			.timeline({
 				yoyo: true,
 				repeat: -1,
-				defaults: { duration: 2, stagger: 0.5, ease: 'bounce' },
+				defaults: { duration: 1, stagger: 0.5, ease: 'bounce' },
 			})
-			.to(container.value.querySelector('hr'), {
-				width: '25%',
-			})
-			.to(container.value.querySelector('hr'), {
+			.to(container.value.querySelectorAll('hr'), {
 				width: '75%',
+			})
+			.to(container.value.querySelectorAll('hr'), {
+				width: '90%',
 			});
 	};
 
@@ -49,8 +50,7 @@
 		if (!container.value) return;
 		const targets = {
 			img: container.value.querySelector('.media-center'),
-			card: container.value.querySelector('#card-text'),
-			content: container.value.querySelector('.content'),
+			cardContent: container.value.querySelector('#card-text'),
 			title: container.value.querySelector('#greeting'),
 		};
 
@@ -72,14 +72,13 @@
 				'-=1.75'
 			)
 			.from(
-				targets.card,
+				targets.cardContent,
 				{
 					scale: 0.5,
 					opacity: 0,
 				},
 				'-=1'
 			);
-		// .from(targets.content, { opacity: 0 });
 	};
 
 	onMounted(async () => {
@@ -91,59 +90,76 @@
 		class="welcome-container"
 		ref="container"
 	>
-		<article
-			id="greeting"
-			class="card article"
-		>
-			<span class="title article-title">
-				{{ getGreeting }}
-			</span>
-		</article>
-		<article class="card article">
-			<section class="card-content">
-				<section class="media-container">
+		<div class="align-column">
+			<Card
+				id="card"
+				class="sticky"
+			>
+				<article class="media-container">
 					<div class="media-center">
 						<img
 							:alt="info.alt"
 							:src="info.img"
 						/>
 					</div>
-				</section>
-				<section
-					id="card-text"
-					class="content article-body"
-				>
-					<p class="has-text-primary">
+				</article>
+				<article id="card-text">
+					<Text is-primary>
+						<section
+							id="greeting"
+							class=""
+						>
+							<span class="title">
+								{{ getGreeting }}
+							</span>
+						</section>
 						<span>Eu sou <b>Leonardo Santos</b></span>
-					</p>
-					<br /><br />
+					</Text>
+					<br />
 					<hr />
+					<br />
+					Engenheiro de software<br />Especialista em front-end. <br /><br />
+					<hr />
+					<br />
+					Conheça meus conteúdos sobre
 					<br /><br />
-					Engenheiro de software<br />Especialista em front-end.
-				</section>
-			</section>
-		</article>
-		<article class="article card">
-			<p class="has-text-secondary article-body">
-				Profissionalmente, estou atuando na empresa Zenvia. <br />
-			</p>
-		</article>
-		<div></div>
-		<div></div>
-
-		<article class="article card">
-			<div class="article-body">
-				Tendo trilhado esse caminho desde 2018, pretendo compartilhar meu
-				conhecimento a respeito das tecnologias que venho utilizando no mercado
-				de trabalho e pessoalmente.
-			</div>
-		</article>
-		<article class="article card">
-			<p class="has-text-secondary article-body">
-				Compartilhando conhecimento como reflexão da paixão que tenho por esse
-				mundo da tecnologia. 💖
-			</p>
-		</article>
+					<div class="align-buttons">
+						<TagLink
+							link="/css"
+							text="CSS"
+						/>
+						<TagLink
+							link="/tests"
+							text="Testes"
+						/>
+						<TagLink
+							link="/vue"
+							text="Vue"
+						/>
+					</div>
+				</article>
+			</Card>
+		</div>
+		<div class="align-column">
+			<Card>
+				<Text is-secondary>
+					Profissionalmente, estou atuando na empresa Zenvia. <br />
+				</Text>
+			</Card>
+			<Card>
+				<div>
+					Tendo trilhado esse caminho desde 2018, pretendo compartilhar meu
+					conhecimento a respeito das tecnologias que venho utilizando no
+					mercado de trabalho e pessoalmente.
+				</div>
+			</Card>
+			<Card>
+				<Text is-secondary>
+					Compartilhando conhecimento como reflexão da paixão que tenho por esse
+					mundo da tecnologia. 💖
+				</Text>
+			</Card>
+		</div>
 	</main>
 </template>
 
@@ -155,54 +171,9 @@
 		/* height: calc(100vh - var(--vp-nav-height)); */
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		place-items: center;
 		margin-top: 5rem;
+
 		gap: 5rem;
-	}
-
-	.has-text-primary,
-	.has-text-centered {
-		text-align: center;
-	}
-
-	.has-text-secondary {
-		padding: 1rem 4rem;
-	}
-
-	.card {
-		background-color: var(--accent-color);
-		position: relative;
-	}
-
-	.content p {
-		line-height: 1.5;
-	}
-	.article-title {
-		font-size: 2rem;
-		font-weight: lighter;
-		line-height: 2;
-		color: var(--text-primary-color);
-		margin-right: 0.5rem;
-	}
-	.article-subtitle {
-		color: var(--text-primary-color);
-	}
-	.article-body {
-		line-height: 1.4;
-		color: var(--text-primary-color);
-		background: rgba(255, 255, 255, 0.15);
-		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-		padding: 1rem;
-		border-radius: 1rem;
-		display: flex;
-		min-height: 25rem;
-		flex-direction: column;
-		justify-content: center;
-		z-index: 5;
-	}
-
-	.article-body hr {
-		width: 50%;
 	}
 
 	.media-container {
@@ -224,5 +195,29 @@
 		border-radius: 2rem;
 		left: -5rem;
 		position: relative;
+	}
+
+	.sticky {
+		position: sticky;
+		top: 5rem;
+		background-color: rgb(58, 58, 58);
+	}
+
+	.align-column {
+		display: flex;
+		flex-direction: column;
+		gap: 5rem;
+		align-items: center;
+	}
+
+	.align-buttons {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		gap: 1rem;
+	}
+
+	#card-text {
+		text-align: center;
 	}
 </style>

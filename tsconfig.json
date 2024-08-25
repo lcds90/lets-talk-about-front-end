@@ -13,5 +13,5 @@
       "jsx": "preserve",
       "baseUrl": ".",
     },
-    "include": ["env.d.ts", "components/**/*", ".vitepress/**/*"]
+    "include": ["env.d.ts", "components/**/*", ".vitepress/**/*", "views/**/*"]
   }
