@@ -2,6 +2,9 @@
 	import gsap from 'gsap';
 	import { computed, onMounted, ref } from 'vue';
 	import { Card, TagLink, Text } from '../components';
+	import { items } from '../shared/links';
+	/* 	import { YoutubeIframe } from '@vue-youtube/component';
+	 */
 
 	const info = {
 		alt: 'Foto de Leonardo Santos',
@@ -80,7 +83,9 @@
 				'-=1'
 			);
 	};
-
+	const links = computed(() =>
+		items.map(({ link, text }) => ({ text: text || '', link: link || '' }))
+	);
 	onMounted(async () => {
 		fadeoutCard();
 	});
@@ -125,16 +130,10 @@
 					<br /><br />
 					<div class="align-buttons">
 						<TagLink
-							link="/css"
-							text="CSS"
-						/>
-						<TagLink
-							link="/tests"
-							text="Testes"
-						/>
-						<TagLink
-							link="/vue"
-							text="Vue"
+							v-for="item in links"
+							:key="item.text"
+							:text="item.text"
+							:link="item.link"
 						/>
 					</div>
 				</article>
@@ -143,7 +142,9 @@
 		<div class="align-column">
 			<Card>
 				<Text is-secondary>
-					Profissionalmente, estou atuando na empresa Zenvia. <br />
+					<!-- https://developers.tiktok.com/doc/embed-player?enter_method=left_navigation 
+					<youtube-iframe video-id="dQw4w9WgXcQ" /> 
+					-->
 				</Text>
 			</Card>
 			<Card>

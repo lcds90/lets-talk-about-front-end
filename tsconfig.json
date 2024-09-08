@@ -12,6 +12,9 @@
       "skipLibCheck": true,
       "jsx": "preserve",
       "baseUrl": ".",
+      "paths": {
+        "@components/*": ["components/*"],
+      }
     },
     "include": ["env.d.ts", "components/**/*", ".vitepress/**/*", "views/**/*"]
   }
