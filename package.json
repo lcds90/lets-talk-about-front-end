@@ -16,10 +16,12 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@primevue/themes": "^4.0.5",
     "@vue-youtube/component": "^0.0.6",
     "@vue-youtube/core": "^0.0.6",
     "axios": "^1.7.7",
     "gsap": "^3.12.5",
-    "lite-youtube-embed": "^0.3.3"
+    "lite-youtube-embed": "^0.3.3",
+    "primevue": "^4.0.5"
   }
 }

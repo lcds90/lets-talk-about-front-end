@@ -2,29 +2,59 @@
 outline: [2, 4]
 ---
 <script setup>
-import { SeeVideos } from '../../components'
+import { SeeVideos, URLExample } from '../../components'
 </script>
+<!--  LINK https://medium.com/@natanmerelles/como-contribuir-na-tradu%C3%A7%C3%A3o-de-conte%C3%BAdos-do-mdn-web-docs-34b110b1cc49 -->
 
-# 🔍 URL API 🔍
+# ℹ️ URL API
 
 ## ✨ Contexto
 
-Esse post serve para abordagem sobre URLs
+Nesse post vamos abordar sobre as API de `URL` e `URLSearchParams`
 
 <see-videos />
 
-## ℹ️ URL Search Params
+---
+
+A API de URL oferece um [padrão válido](https://developer.mozilla.org/pt-BR/docs/Glossary/URL) para manipular, ajudando também a definir conceitos como domínios, hosts e endereços IP, e descrever de maneira padronizada o tipo MIME legado `application/x-www-form-urlencoded` usado para enviar o conteúdo de formulários da web como um conjunto de pares chave/valor.
+
+::: details Definição de URL
+A maior parte do padrão de URL é dedicada à definição de uma URL e como ela é estruturada e analisada.
+
+:::
+
+> O que mais interessa à maioria dos desenvolvedores, no entanto, é a própria API.
+
+
+## 🔗 URL
+
+### 🚀 O que é?
+::: info Interface URL
+Fornece uma maneira simples de trabalhar com URLs em JavaScript.
+O intuito é construir, analisar e modificar URLs de forma dinâmica! 
+:::
+
+### 🤔 Para que serve?
+::: tip Decompõe URLs em partes
+Sendo possível manipular essas propriedades de maneira prática, facilitando a construção de URLs dinâmicas e confiáveis.
+:::
+
+---
+
+Toda vez que considerar lidar com URLs, forneça essa opção pois houvendo a necessidade de manipular as suas propriedades, logo saberemos lidar de forma mais precavida com cenários.
+
+<URLExample />
+
+## 🔍 URL Search Params
 
 ### 🚀 O que é?
 ::: info O URLSearchParams é uma interface que facilita a manipulação de parâmetros na string de consulta (query string) de uma URL. 🌐🔧
 :::
 
-Ele faz parte do conjunto de Web Workers
 
 ### 🤔 Para que serve?
 ::: tip O URLSearchParams permite que você manipule parâmetros de URL de maneira eficiente, seja para construir links dinâmicos, coletar dados de formulários ou melhorar a experiência do usuário na web. 🌟✍️
 :::
-
 
 const mapperParams = computed(() => {
   const mapperParams = {

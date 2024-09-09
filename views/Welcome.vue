@@ -212,10 +212,10 @@
 	}
 
 	.align-buttons {
-		display: flex;
-		justify-content: center;
 		width: 100%;
 		gap: 1rem;
+		display: grid;
+		grid: 1fr / repeat(auto-fit, minmax(10rem, 1fr));
 	}
 
 	#card-text {

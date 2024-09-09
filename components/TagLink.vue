@@ -4,7 +4,7 @@
 		rel="noopener noreferrer"
 		class="badge-link"
 	>
-		<span class="badge">{{ text }}</span>
+		{{ text }}
 	</a>
 </template>
 
@@ -24,9 +24,7 @@
 <style scoped>
 	.badge-link {
 		text-decoration: none;
-	}
-
-	.badge {
+		min-width: 10rem;
 		display: inline-block;
 		padding: 0.5rem 1rem;
 		font-size: 0.875rem;
@@ -37,7 +35,7 @@
 		box-shadow: 0.5rem 0.5rem 0.25rem rgba(0,0,0,0.15)
 	}
 
-	.badge-link:hover .badge {
+	.badge-link:hover {
 		background-color: #d2d2d2;
 		color: #9142b9;
 		box-shadow: 0rem 0 1rem rgba(110,110,110,0.5)

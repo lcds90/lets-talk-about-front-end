@@ -26,8 +26,8 @@
 			<button
 				class="btn"
 				@click="$emit('open')"
-				title="Abrir no player"
-				:aria-label="`Assistir conteúdo do ${socialMedia} no player`"
+				:title="`Assistir conteúdo no ${socialMedia}`"
+				:aria-label="`Assistir conteúdo no ${socialMedia}`"
 				tabindex="0"
 				:data-track="`social-media-player-${socialMedia}`"
 			>
@@ -41,13 +41,13 @@
 				target="_blank"
 				rel="noopener noreferrer"
 				class="btn"
-				title="Abrir em nova guia"
-				:aria-label="`Abrir conteúdo do ${socialMedia} em uma nova guia`"
+				:title="`Abrir canal do ${socialMedia}`"
+				:aria-label="`Abrir canal do ${socialMedia}`"
 				tabindex="0"
 				:data-track="`social-media-external-${socialMedia}`"
 			>
 				<font-awesome-icon
-					:icon="['fas', 'up-right-from-square']"
+					:icon="['fas', 'user']"
 					size="1x"
 					:style="{ fontSize: '0.75em' }"
 					aria-hidden="true"

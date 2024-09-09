@@ -1,8 +1,7 @@
 import { DefaultTheme } from 'vitepress';
-
 export const items: DefaultTheme.SidebarItem[] = [
 	{
-		text: 'Detalhando APIs',
+		text: 'Detalhando APIs da Web',
 		collapsed: true,
 		link: '/posts/apis/',
 		items: [{ link: '/posts/apis/url-api', text: 'URL API' }],
