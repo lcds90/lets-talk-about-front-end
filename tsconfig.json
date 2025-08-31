@@ -1,20 +1,27 @@
 {
-    "compilerOptions": {
-      "outDir": "dist",
-      "target": "esnext",
-      "module": "esnext",
-      "moduleResolution": "bundler",
-      "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "allowJs": true,
-      "strict": true,
-      "noUnusedLocals": true,
-      "skipLibCheck": true,
-      "jsx": "preserve",
-      "baseUrl": ".",
-      "paths": {
-        "@components/*": ["components/*"],
-      }
-    },
-    "include": ["env.d.ts", "components/**/*", ".vitepress/**/*", "views/**/*"]
-  }
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ]
+    }
+  },
+  "include": [
+    "env.d.ts",
+    "src/components/**/*",
+    ".vitepress/**/*",
+    "src/views/**/*"
+, "eslint.config.ts", "eslint.config.ts"  ]
+}

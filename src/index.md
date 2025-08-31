@@ -1,6 +1,5 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
 # hero:
 # name: 'LCDS'
 # text: ''
@@ -19,6 +18,9 @@ layout: home
 #     details: 🎨 Front-end - Vue, Nuxt Js, HTML, CSS, Javascript, GSAP <br> 📊 Analytics - Full Story, Google Analytics, Google Tag Manager <br> 🧪️ Testes - Jest, Vue Test, Cypress
 #   - title: Entre em contato comigo
 #     details: <ul> <li>- Github</li><li>- Linkedin</li>
+next: false
+aside: false
+title: 'Leonardo Conceição dos Santos - Desenvolvedor Front-end'
 ---
 
 <script setup>
