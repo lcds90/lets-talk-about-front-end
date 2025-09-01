@@ -2,7 +2,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { createManager } from '@vue-youtube/core'
+// import { createManager } from '@vue-youtube/core'
 import PrimeVue from 'primevue/config'
 import './style.css'
 import './custom.css'
@@ -26,7 +26,7 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
-    app.use(createManager())
+    // app.use(createManager())
     app.use(PrimeVue, {
       theme: {
         preset,
