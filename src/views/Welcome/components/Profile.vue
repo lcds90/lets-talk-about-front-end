@@ -1,33 +1,35 @@
 <script setup lang="ts">
-import { Card } from '../../../components'
-import { Profile, useGreetings } from '../composables'
+import Panel from 'primevue/panel'
+import { Profile } from '../composables'
+import Avatar from 'primevue/avatar'
+import Techs from './Techs.vue'
 interface Props {
   profile: Profile
 }
 
 defineProps<Props>()
-
-const { getGreeting } = useGreetings()
 </script>
 
 <template>
-  <Card id="profile">
-    <article class="media-container">
-      <div class="media-photo">
-        <img :alt="profile.alt" :src="profile.img" />
-      </div>
-    </article>
-    <hr class="line" />
-    <article class="card-text-greeting">
-      <p id="greeting" class="title">
-        {{ getGreeting }}
-      </p>
-
-      <p>
-        Eu sou <b>{{ profile.display_name }}</b>
-      </p>
-    </article>
-  </Card>
+  <section>
+    <Panel toggleable>
+      <template #header>
+        <div class="header">
+          <Avatar :image="profile.img" :alt="profile.alt" shape="circle" />
+          <span class="font-bold">{{ profile.display_name }}</span>
+        </div>
+      </template>
+      <article>
+        <h3>💡 𝑸𝒖𝒆𝒎 𝒔𝒐𝒖 𝒆𝒖</h3>
+        <p>
+          Paulista de 28 anos, e uma pessoa apaixonada por tecnologia e construir experiências
+          melhores e únicas mediante telas digitais, minha trajetória total já contabiliza 5 anos
+          atuando com desenvolvimento web!
+        </p>
+      </article>
+      <Techs />
+    </Panel>
+  </section>
 </template>
 
 <style scoped>
@@ -38,6 +40,12 @@ const { getGreeting } = useGreetings()
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   border-radius: 0.5rem;
   border: none;
+}
+
+.header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .media-container {
@@ -57,5 +65,9 @@ const { getGreeting } = useGreetings()
 .media-photo img {
   width: 100%;
   border-radius: 2rem;
+}
+
+section :deep(h3) {
+  margin-top: 8px;
 }
 </style>

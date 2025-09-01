@@ -1,35 +1,39 @@
 <template>
-  <section>
-    <h1>🧑‍💻 𝑫𝒆𝒔𝒆𝒏𝒗𝒐𝒍𝒗𝒆𝒅𝒐𝒓 𝒇𝒓𝒐𝒏𝒕 𝒆𝒏𝒅</h1>
+  <Card>
+    <template #title>
+      <h1>🧑‍💻Meus Posts</h1>
+    </template>
+    <template #content>
+      <p>
+        📝Minha principal habilidade é o desenvolvimento front-end, atualmente estou na Zenvia,
+        atuando diretamente com o desenvolvimento da aplicação em camada front-end e projetos
+        relacionados a área de Web Analytics.
+      </p>
 
-    <p>
-      📝Minha principal habilidade é o desenvolvimento front-end, atualmente estou na Zenvia,
-      atuando diretamente com o desenvolvimento da aplicação em camada front-end e projetos
-      relacionados a área de Web Analytics.
-    </p>
-
-    <Carousel
-      :value="techsThatIUsed.technologies"
-      :numVisible="6"
-      :numScroll="6"
-      :autoplay-interval="4000"
-      circular
-      :show-indicators="false"
-      :show-navigators="false"
-    >
-      <template #item="slotProps">
-        <div>
+      <Carousel
+        :value="techsThatIUsed.technologies"
+        :numVisible="6"
+        :numScroll="6"
+        :autoplay-interval="4000"
+        circular
+        :show-indicators="false"
+        :show-navigators="false"
+      >
+        <template #item="slotProps">
           <div>
-            <img :src="slotProps.data.icon" :alt="slotProps.data.name" />
+            <div>
+              <img :src="slotProps.data.icon" :alt="slotProps.data.name" />
+            </div>
+            <div>{{ slotProps.data.name }}</div>
           </div>
-          <div>{{ slotProps.data.name }}</div>
-        </div>
-      </template>
-    </Carousel>
-  </section>
+        </template>
+      </Carousel>
+    </template>
+  </Card>
 </template>
 
 <script setup lang="ts">
+import Card from 'primevue/card'
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 
 const techsThatIUsed = computed(() => ({
