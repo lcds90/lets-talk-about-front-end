@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "lint": "eslint --ext .ts,.vue --fix",
     "format": "prettier .  --write"
   },
