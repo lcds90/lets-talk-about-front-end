@@ -20,11 +20,12 @@
 #     details: <ul> <li>- Github</li><li>- Linkedin</li>
 next: false
 aside: false
+sidebar: false
 title: 'Leonardo Conceição dos Santos - Desenvolvedor Front-end'
 ---
 
 <script setup>
-import {  Welcome } from './views'
+import {  Welcome } from './views/Welcome'
 </script>
 
 <Welcome />

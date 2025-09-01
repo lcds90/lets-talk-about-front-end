@@ -9,10 +9,10 @@ import './custom.css'
 import preset from '@primevue/themes/aura'
 import FloatLabel from 'primevue/floatlabel'
 import InputText from 'primevue/inputtext'
+import Carousel from 'primevue/carousel'
 
-/* import font awesome icon component */
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-/* add icons to the library */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlayCircle, faUser, faTerminal } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
@@ -35,5 +35,6 @@ export default {
     app.component('font-awesome-icon', FontAwesomeIcon)
     app.component('FloatLabel', FloatLabel)
     app.component('InputText', InputText)
+    app.component('Carousel', Carousel)
   },
 } satisfies Theme
