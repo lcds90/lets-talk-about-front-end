@@ -6,7 +6,7 @@ import { computed } from 'vue'
 // FAZER O CURRICULO COM ANOS - JUNIOR, PLENO, ETC E EXPLICANDO SOBRE FEITOS
 const timelineFrontEnd = computed(() => [
   {
-    experience: 'Construção de protótipos realizados em aplicações como Figma',
+    experience: 'Construção de protótipos realizados em aplicações como Figm',
     icon: 'fa-figma',
   },
   {
