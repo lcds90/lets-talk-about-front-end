@@ -59,7 +59,6 @@ export const useGravatarProfile = defineStore('profile', () => {
         img: `${response.data.avatar_url}?s=400`,
         ...response.data,
       }
-      console.log('profile', profile.value)
     } catch (error) {
       console.error(error)
     } finally {

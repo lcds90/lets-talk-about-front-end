@@ -16,6 +16,7 @@ import Toolbar from 'primevue/toolbar'
 import Button from 'primevue/button'
 import Avatar from 'primevue/avatar'
 import Image from 'primevue/image'
+import Tag from 'primevue/tag'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -49,6 +50,7 @@ export default {
     app.component('Button', Button)
     app.component('Avatar', Avatar)
     app.component('Image', Image)
+    app.component('Tag', Tag)
 
   },
 } satisfies Theme

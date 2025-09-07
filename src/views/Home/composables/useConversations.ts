@@ -20,6 +20,7 @@ const getCurrentTime = () => {
 
 export const useConversations = defineStore('conversations', () => {
   const newMessage = ref('')
+  const stillTyping = ref<'user' | 'chatbot' | null>(null)
   const { profile } = storeToRefs(useGravatarProfile())
 
   const initialConversation: Message[] = [
@@ -174,7 +175,7 @@ export const useConversations = defineStore('conversations', () => {
       content: {
         type: 'text',
         payload:
-          'Atualmente, trabalho na TechSolutions Inc., onde lidero o desenvolvimento do front-end do nosso principal produto, utilizando Vue 3, Pinia e TypeScript.',
+          'Atualmente, trabalho na Zenvia, onde lidero o desenvolvimento do front-end do núcleo do produto aonde há um ecossistema lidando com Envio de Mensagens, Automação desses envio de mensagens, além da caixa de atendimento e gerenciamento de grupos/multigrupos, utilizando Vue 3, Pinia e TypeScript.',
       },
       time: getCurrentTime(),
     },
@@ -261,7 +262,37 @@ export const useConversations = defineStore('conversations', () => {
   const messages = ref(useLocalStorage('lcds/conversations', [...initialConversation]))
   const hasMessagesInHistory = computed(() => messages.value.length !== initialConversation.length)
 
-  const handleButtonClick = (buttonPayload: ConversationPayload) => {
+  const addMessageWithAnimation = (flowMessages: Message[]) => {
+    return new Promise((resolve) => {
+      // Se não houver mensagens para adicionar, resolve imediatamente.
+      if (!flowMessages || flowMessages.length === 0) {
+        resolve(true)
+        return
+      }
+
+      // Inicia o indicador de digitação AQUI, antes do loop
+      stillTyping.value = 'chatbot'
+
+      // O loop para agendar a exibição de cada mensagem continua o mesmo.
+      flowMessages.forEach((message, index) => {
+        setTimeout(() => {
+          messages.value.push(message)
+        }, 2000 * index) // O +1 não é estritamente necessário
+      })
+
+      // CÁLCULO FINAL: O segredo está aqui.
+      // Calculamos o tempo total que levará para a última mensagem aparecer.
+      const totalAnimationTime = 2000 * (flowMessages.length - 1)
+
+      // Criamos um último setTimeout que irá resolver a Promise
+      // somente DEPOIS que a última animação tiver ocorrido.
+      setTimeout(() => {
+        resolve(true)
+      }, totalAnimationTime + 50) // Adicionamos 50ms de margem
+    })
+  }
+
+  const handleButtonClick = async (buttonPayload: ConversationPayload) => {
     const userMessage: Message = {
       id: Date.now(), // ID dinâmico
       type: 'message',
@@ -279,17 +310,14 @@ export const useConversations = defineStore('conversations', () => {
     const nextFlow = conversationFlows[buttonPayload]
 
     if (nextFlow) {
-      setTimeout(() => {
-        messages.value.push(...nextFlow)
-      }, 1000)
+      await addMessageWithAnimation(nextFlow)
+      stillTyping.value = null
     }
   }
 
   const resetMessages = () => {
-    console.log('resetMessages', messages.value)
     messages.value = [...initialConversation]
     newMessage.value = ''
-    console.log('resetMessages', messages.value)
   }
 
   const sendMessage = () => {
@@ -301,6 +329,7 @@ export const useConversations = defineStore('conversations', () => {
     hasMessagesInHistory,
     messages,
     newMessage,
+    stillTyping,
     handleButtonClick,
     resetMessages,
     sendMessage,

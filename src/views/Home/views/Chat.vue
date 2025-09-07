@@ -5,9 +5,10 @@ import { Header, MessageSystem, MessageUser } from '../components'
 
 import { ConversationPayload, useConversations, useGravatarProfile } from '../composables'
 import { storeToRefs } from 'pinia'
+import MessageTyping from '../components/MessageTyping.vue'
 
 const conversationsStore = useConversations()
-const { messages, newMessage } = storeToRefs(conversationsStore)
+const { messages, newMessage, stillTyping } = storeToRefs(conversationsStore)
 const { profile } = storeToRefs(useGravatarProfile())
 
 // ID do usuário atual (para diferenciar mensagens enviadas e recebidas)
@@ -19,16 +20,16 @@ const endChat = () => {
 const messagesContainer = ref<HTMLElement | null>(null)
 
 // Função para rolar para a última mensagem
-const scrollToBottom = async () => {
+const scrollToBottom = async (timeout = 1) => {
   await nextTick() // Espera o DOM ser atualizado com a nova mensagem
   const container = messagesContainer.value
   if (container) {
-    const lastConversation = [...container.querySelectorAll('.message-bubble')].pop()
-    console.dir(lastConversation)
-    if (lastConversation) {
+    // const el = container.querySelector('.typing')
+    const el = [...container.querySelectorAll('.message-bubble')].pop()
+    if (el) {
       setTimeout(() => {
-        lastConversation.scrollIntoView({ behavior: 'smooth' })
-      }, 1000)
+        el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'end' })
+      }, timeout)
     }
   }
 }
@@ -46,7 +47,6 @@ watch(
   messages,
   () => {
     scrollToBottom()
-    console.log('scroll')
   },
   { deep: true }
 )
@@ -73,11 +73,12 @@ watch(
       <div
         v-for="(msg, index) in messages"
         :key="msg.id"
-        :class="index !== messages.length - 1 ? 'mb-3' : 'mb-5'"
+        :class="stillTyping || index !== messages.length - 1 ? 'mb-3' : 'mb-5'"
       >
         <MessageSystem v-if="['date', 'system'].includes(msg.type)" :text="msg.content.payload" />
         <MessageUser v-else :msg="msg" @on-button-click="handlebutton" />
       </div>
+      <MessageTyping v-if="stillTyping" class="mb-5" :typing="stillTyping" />
     </div>
 
     <div class="input-footer p-2 flex align-items-center fixed w-full bottom-0">

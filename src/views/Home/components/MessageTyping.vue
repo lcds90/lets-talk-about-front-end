@@ -1,56 +1,37 @@
 <template>
-  <div class="flex" :class="{ 'justify-content-end': msg.direction === 'sent' }">
+  <div class="flex typing" :class="{ 'justify-content-end': typing === 'user' }">
     <div class="flex align-items-end message-group">
       <Avatar
-        v-if="msg.direction === 'received'"
+        v-if="typing === 'chatbot'"
         :image="messageAvatar"
         shape="circle"
         class="mr-2 message-avatar"
       />
 
-      <div class="message-bubble" :class="msg.direction">
-        <div v-if="msg.content.type === 'image'" class="message-image-container">
-          <Image :src="msg.content.payload" alt="Imagem enviada" preview />
-        </div>
-
-        <div v-if="msg.content.type === 'text'" class="message-text">
-          {{ msg.content.payload }}
-        </div>
-
-        <div
-          v-if="msg.content.buttons"
-          class="flex flex-wrap mt-4 gap-2 gap-y-4 justify-content-center"
-        >
-          <Button
-            v-for="button in msg.content.buttons"
-            :key="button.payload"
-            :label="button.text"
-            @click="$emit('on-button-click', button.payload)"
-            severity="help"
-            outlined
-            size="small"
-            class="border-round-lg"
-          />
-        </div>
-
-        <div class="message-info flex align-items-center">
-          <small class="text-color-secondary">{{ msg.time }}</small>
-          <i v-if="msg.direction === 'received'" class="pi pi-check ml-1 message-status"></i>
-        </div>
-      </div>
+      <!-- <div
+        class="message-bubble"
+        :class="{ sent: typing === 'user', received: typing === 'chatbot' }"
+      >
+        ...
+      </div> -->
+      <Tag severity="secondary" rounded class="typing-bubble">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </Tag>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Message } from '../types/Message'
 import { computed } from 'vue'
 
 interface Props {
-  msg: Message
+  typing: 'user' | 'chatbot' | null
+  avatar?: string
 }
 
-const messageAvatar = computed(() => (props.msg.sender?.avatar ? props.msg.sender.avatar : ''))
+const messageAvatar = computed(() => (props?.avatar ? props.avatar : ''))
 const props = defineProps<Props>()
 defineEmits(['on-button-click'])
 </script>
@@ -124,6 +105,39 @@ defineEmits(['on-button-click'])
 
   :deep(.p-avatar) {
     display: block;
+  }
+}
+
+.typing-bubble {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* O estilo e a animação dos pontos permanecem os mesmos */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  margin: 0 3px;
+  animation: bounce 1.3s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
 </style>
