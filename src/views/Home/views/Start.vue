@@ -2,20 +2,28 @@
   <div class="profile-card-container">
     <div ref="profileCard" class="profile-card">
       <div ref="profileAvatar">
-        <Avatar image="https://i.pravatar.cc/150?u=katherine" size="xlarge" shape="circle" />
+        <Avatar :image="profile.img" size="xlarge" shape="circle" />
       </div>
 
       <div class="profile-info">
-        <h2 ref="profileName">Leonardo Santos</h2>
-        <p ref="profileDescription" class="description">Desenvolvedor Front-end</p>
+        <h2 ref="profileName">{{ profile.display_name }}</h2>
+        <p ref="profileDescription" class="description">{{ getGreeting }}</p>
       </div>
 
       <div ref="profileCta">
         <Button
-          label="Iniciar Conversa"
+          :label="hasMessagesInHistory ? 'Iniciar conversa nova' : 'Iniciar Conversa'"
           icon="pi pi-comments"
           severity="secondary"
           @click="startConversation"
+        />
+      </div>
+      <div ref="profileContinue" v-if="hasMessagesInHistory">
+        <Button
+          label="Continuar conversa anterior"
+          icon="pi pi-comments"
+          severity="secondary"
+          @click="continueConversation"
         />
       </div>
     </div>
@@ -29,6 +37,8 @@ import gsap from 'gsap'
 // Importando componentes do PrimeVue
 import Avatar from 'primevue/avatar'
 import Button from 'primevue/button'
+import { useConversations, useGravatarProfile, useGreetings } from '../composables'
+import { storeToRefs } from 'pinia'
 
 // Refs para "conectar" o script aos elementos do template
 const profileCard = ref(null)
@@ -36,13 +46,26 @@ const profileAvatar = ref(null)
 const profileName = ref(null)
 const profileDescription = ref(null)
 const profileCta = ref(null)
-const emit = defineEmits(['start-chat'])
+const profileContinue = ref(null)
+const emit = defineEmits(['toggle-chat'])
+
+const { profile } = storeToRefs(useGravatarProfile())
+const conversationsStore = useConversations()
+const { hasMessagesInHistory } = storeToRefs(conversationsStore)
+
+const { getGreeting } = useGreetings()
 // onMounted garante que o código de animação só rode quando o componente estiver na tela
 onMounted(() => {
   // Configuração inicial dos elementos (invisíveis e fora de posição)
   // Isso previne um "flash" do conteúdo antes da animação começar
   gsap.set(
-    [profileAvatar.value, profileName.value, profileDescription.value, profileCta.value],
+    [
+      profileAvatar.value,
+      profileName.value,
+      profileDescription.value,
+      profileCta.value,
+      profileContinue.value,
+    ],
     { opacity: 0, y: 30 } // y: 30 move os elementos 30px para baixo
   )
   gsap.set(profileCard.value, { opacity: 0, scale: 0.95 })
@@ -56,11 +79,15 @@ onMounted(() => {
     .to(profileName.value, { opacity: 1, y: 0, duration: 0.4 }, '-=0.3')
     .to(profileDescription.value, { opacity: 1, y: 0, duration: 0.4 }, '-=0.3')
     .to(profileCta.value, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
+    .to(profileContinue.value, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
 })
+const continueConversation = () => {
+  emit('toggle-chat')
+}
 
 const startConversation = () => {
-  // Dispara o evento 'start-chat' para o componente pai
-  emit('start-chat')
+  conversationsStore.resetMessages()
+  emit('toggle-chat')
 }
 </script>
 

@@ -1,5 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
+import { createPinia } from 'pinia'
+
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 // import { createManager } from '@vue-youtube/core'
@@ -10,7 +12,10 @@ import preset from '@primevue/themes/aura'
 import FloatLabel from 'primevue/floatlabel'
 import InputText from 'primevue/inputtext'
 import Carousel from 'primevue/carousel'
-
+import Toolbar from 'primevue/toolbar'
+import Button from 'primevue/button'
+import Avatar from 'primevue/avatar'
+import Image from 'primevue/image'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -27,8 +32,10 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
+    const pinia = createPinia()
     library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
     // app.use(createManager())
+    app.use(pinia)
     app.use(PrimeVue, {
       theme: {
         preset,
@@ -38,5 +45,10 @@ export default {
     app.component('FloatLabel', FloatLabel)
     app.component('InputText', InputText)
     app.component('Carousel', Carousel)
+    app.component('Toolbar', Toolbar)
+    app.component('Button', Button)
+    app.component('Avatar', Avatar)
+    app.component('Image', Image)
+
   },
 } satisfies Theme

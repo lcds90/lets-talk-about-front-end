@@ -1,23 +1,23 @@
 <template>
   <div id="app">
     <Transition @enter="onEnter" @leave="onLeave" :css="false" mode="out-in">
-      <Start v-if="!chatStarted" @start-chat="handleStartChat" />
-      <Chat v-else />
+      <Start v-if="!chatStarted" @toggle-chat="handleToggleChat" />
+      <Chat v-else @toggle-chat="handleToggleChat" />
     </Transition>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
-import Start from './views/Start.vue'
-import { Chat } from './views/Chat'
+import { Chat, Start } from './views'
+import { useGravatarProfile } from './composables'
 
 // O controle de estado permanece o mesmo
 const chatStarted = ref(false)
-
-function handleStartChat() {
-  chatStarted.value = true
+const gravatar = useGravatarProfile()
+function handleToggleChat() {
+  chatStarted.value = !chatStarted.value
 }
 
 // --- LÓGICA DA ANIMAÇÃO COM GSAP ---
@@ -50,4 +50,8 @@ function onEnter(el, done) {
     onComplete: done, // Novamente, avisamos ao Vue quando a animação de entrada termina.
   })
 }
+
+onMounted(async () => {
+  await gravatar.fetchGravatarAPI()
+})
 </script>

@@ -34,9 +34,11 @@
     "@primevue/themes": "^4.0.5",
     "@vue-youtube/component": "^0.0.6",
     "@vue-youtube/core": "^0.0.6",
+    "@vueuse/core": "^13.9.0",
     "axios": "^1.7.7",
     "gsap": "^3.12.5",
     "lite-youtube-embed": "^0.3.3",
+    "pinia": "^3.0.3",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.9"
