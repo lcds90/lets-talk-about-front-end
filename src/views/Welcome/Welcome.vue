@@ -19,7 +19,7 @@ const { profile } = useGravatarProfile()
 
 <style scoped>
 .welcome-container {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   position: relative;
   gap: 16px;
   display: flex;

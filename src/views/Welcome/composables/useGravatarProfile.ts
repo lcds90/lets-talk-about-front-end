@@ -53,7 +53,7 @@ export const useGravatarProfile = () => {
       })
       profile.value = {
         alt: 'Foto de Leonardo Santos',
-        img: `${response.data.avatar_url}?s=400`,
+        img: `${response.data.avatar_url}?s=40`,
         ...response.data,
       }
     } catch (error) {

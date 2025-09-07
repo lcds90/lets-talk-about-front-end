@@ -2,44 +2,44 @@ import { DefaultTheme } from 'vitepress'
 export const items: DefaultTheme.SidebarItem[] = [
   {
     text: 'Detalhando APIs da Web',
-    collapsed: true,
+    collapsed: false,
     link: '/posts/apis/',
     items: [{ link: '/posts/apis/url-api', text: 'URL API' }],
   },
   {
     text: 'Estilização com CSS',
-    collapsed: true,
+    collapsed: false,
     link: '/posts/css/',
     items: [
-      { text: 'Flexbox', link: '/posts/css/flexbox' },
+      // { text: 'Flexbox', link: '/posts/css/flexbox' },
       { text: 'Grid', link: '/posts/css/grid' },
       { text: 'Clamp', link: '/posts/css/clamp' },
     ],
   },
-  {
-    text: 'Métricas e analises',
-    collapsed: true,
-    link: '/posts/metrics/',
-    items: [
-      {
-        link: '/posts/metrics',
-        text: 'Métricas',
-      },
-      {
-        link: '/posts/metrics/graphs',
-        text: 'Graficos',
-      },
-    ],
-  },
+  // {
+  //   text: 'Métricas e analises',
+  //   collapsed: false,
+  //   link: '/posts/metrics/',
+  //   items: [
+  //     {
+  //       link: '/posts/metrics',
+  //       text: 'Métricas',
+  //     },
+  //     {
+  //       link: '/posts/metrics/graphs',
+  //       text: 'Graficos',
+  //     },
+  //   ],
+  // },
   {
     text: 'Bibliotecas NPM',
-    collapsed: true,
+    collapsed: false,
     link: '/posts/libs/',
     items: [{ link: '/posts/libs/eslint-prettier', text: 'Eslint + Prettier' }],
   },
   {
     text: 'Testes',
-    collapsed: true,
+    collapsed: false,
     link: '/posts/tests/',
     items: [
       { link: '/posts/tests', text: 'Jest' },
@@ -48,7 +48,7 @@ export const items: DefaultTheme.SidebarItem[] = [
   },
   {
     text: 'Vue',
-    collapsed: true,
+    collapsed: false,
     link: '/posts/vue/',
     items: [],
   },

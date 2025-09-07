@@ -21,11 +21,14 @@
 next: false
 aside: false
 sidebar: false
+navbar: false
+layout: home
+pageClass: chat-home
 title: 'Leonardo Conceição dos Santos - Desenvolvedor Front-end'
 ---
 
 <script setup>
-import {  Welcome } from './views/Welcome'
+import Portfolio from './views/Home/index.vue'
 </script>
 
-<Welcome />
+<Portfolio />

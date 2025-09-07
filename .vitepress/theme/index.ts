@@ -16,6 +16,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlayCircle, faUser, faTerminal } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
 
 export default {
   extends: DefaultTheme,
