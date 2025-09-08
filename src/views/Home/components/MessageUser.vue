@@ -34,7 +34,9 @@
         </div>
 
         <div class="message-info flex align-items-center">
-          <small class="text-color-secondary">{{ msg.time }}</small>
+          <small v-if="msg.time" class="text-color-secondary">{{
+            parseDate({ date: msg.time, style: 'time' })
+          }}</small>
           <i v-if="msg.direction === 'received'" class="pi pi-check ml-1 message-status"></i>
         </div>
       </div>
@@ -45,13 +47,15 @@
 <script setup lang="ts">
 import { Message } from '../types/Message'
 import { computed } from 'vue'
+import { useConversations } from '../composables'
 
 interface Props {
   msg: Message
 }
 
-const messageAvatar = computed(() => (props.msg.sender?.avatar ? props.msg.sender.avatar : ''))
+const { parseDate } = useConversations()
 const props = defineProps<Props>()
+const messageAvatar = computed(() => (props.msg.sender?.avatar ? props.msg.sender.avatar : ''))
 defineEmits(['on-button-click'])
 </script>
 

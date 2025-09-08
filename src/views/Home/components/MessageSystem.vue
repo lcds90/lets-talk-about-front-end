@@ -1,15 +1,24 @@
 <template>
   <div class="system-message">
-    <span>{{ text }}</span>
+    <span>{{ parsedDate }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useConversations } from '../composables'
+
+const { parseDate } = useConversations()
+
 interface Props {
   text: string
+  type: 'system' | 'date' | 'message'
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+const parsedDate = computed(() =>
+  props.type === 'date' ? parseDate({ date: props.text, style: 'date' }) : props.text
+)
 </script>
 
 <style>

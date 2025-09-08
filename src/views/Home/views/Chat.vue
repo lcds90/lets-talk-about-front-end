@@ -6,6 +6,7 @@ import { Header, MessageSystem, MessageUser } from '../components'
 import { ConversationPayload, useConversations, useGravatarProfile } from '../composables'
 import { storeToRefs } from 'pinia'
 import MessageTyping from '../components/MessageTyping.vue'
+import SocialLinks from '../components/SocialLinks.vue'
 
 const conversationsStore = useConversations()
 const { messages, newMessage, stillTyping } = storeToRefs(conversationsStore)
@@ -26,17 +27,20 @@ const scrollToBottom = async (timeout = 1) => {
   if (container) {
     // const el = container.querySelector('.typing')
     const el = [...container.querySelectorAll('.message-bubble')].pop()
+    console.dir(el)
     if (el) {
       setTimeout(() => {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'end' })
+        el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
       }, timeout)
     }
   }
 }
 
-// Rola para o final quando o componente é montado
 onMounted(() => {
-  scrollToBottom()
+  conversationsStore.updateDate()
+  setTimeout(() => {
+    scrollToBottom()
+  }, 1000)
 })
 
 const handlebutton = (payload: ConversationPayload) => {
@@ -48,7 +52,7 @@ watch(
   () => {
     scrollToBottom()
   },
-  { deep: true }
+  { deep: true, immediate: true }
 )
 </script>
 
@@ -60,12 +64,12 @@ watch(
           @return="endChat"
           :avatar="profile.img"
           :name="profile.display_name"
-          status="Online!"
+          status="🤖 Assistente online"
         />
       </template>
 
       <template #end>
-        <Button icon="pi pi-ellipsis-v" class="p-button-text p-button-rounded" />
+        <SocialLinks />
       </template>
     </Toolbar>
 
@@ -75,7 +79,11 @@ watch(
         :key="msg.id"
         :class="stillTyping || index !== messages.length - 1 ? 'mb-3' : 'mb-5'"
       >
-        <MessageSystem v-if="['date', 'system'].includes(msg.type)" :text="msg.content.payload" />
+        <MessageSystem
+          v-if="['date', 'system'].includes(msg.type)"
+          :type="msg.type"
+          :text="msg.content.payload"
+        />
         <MessageUser v-else :msg="msg" @on-button-click="handlebutton" />
       </div>
       <MessageTyping v-if="stillTyping" class="mb-5" :typing="stillTyping" />

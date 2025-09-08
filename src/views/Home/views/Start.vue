@@ -7,7 +7,22 @@
 
       <div class="profile-info">
         <h2 ref="profileName">{{ profile.display_name }}</h2>
-        <p ref="profileDescription" class="description">{{ getGreeting }}</p>
+        <div ref="profileDescription" class="description">
+          <p>
+            {{ getGreeting }}
+          </p>
+          <Transition
+            @enter="onEnterHoverMessage"
+            @leave="onLeaveHoverMessage"
+            :css="false"
+            mode="out-in"
+          >
+            <p class="hover-message" ref="profileHoverMessage" v-if="hoverMessage">
+              {{ hoverMessage }}
+            </p>
+          </Transition>
+          <SocialLinks class="my-3 gap-3" />
+        </div>
       </div>
 
       <div ref="profileCta">
@@ -31,7 +46,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import gsap from 'gsap'
 
 // Importando componentes do PrimeVue
@@ -39,6 +54,7 @@ import Avatar from 'primevue/avatar'
 import Button from 'primevue/button'
 import { useConversations, useGravatarProfile, useGreetings } from '../composables'
 import { storeToRefs } from 'pinia'
+import SocialLinks from '../components/SocialLinks.vue'
 
 // Refs para "conectar" o script aos elementos do template
 const profileCard = ref(null)
@@ -47,13 +63,14 @@ const profileName = ref(null)
 const profileDescription = ref(null)
 const profileCta = ref(null)
 const profileContinue = ref(null)
+const profileHoverMessage = ref(null)
 const emit = defineEmits(['toggle-chat'])
 
 const { profile } = storeToRefs(useGravatarProfile())
 const conversationsStore = useConversations()
 const { hasMessagesInHistory } = storeToRefs(conversationsStore)
 
-const { getGreeting } = useGreetings()
+const { getGreeting, hoverMessage } = storeToRefs(useGreetings())
 // onMounted garante que o código de animação só rode quando o componente estiver na tela
 onMounted(() => {
   // Configuração inicial dos elementos (invisíveis e fora de posição)
@@ -65,6 +82,7 @@ onMounted(() => {
       profileDescription.value,
       profileCta.value,
       profileContinue.value,
+      profileHoverMessage.value,
     ],
     { opacity: 0, y: 30 } // y: 30 move os elementos 30px para baixo
   )
@@ -81,6 +99,31 @@ onMounted(() => {
     .to(profileCta.value, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
     .to(profileContinue.value, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
 })
+
+const onEnterHoverMessage = (el, done) => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 50,
+    duration: 0.5,
+    ease: 'power2.out',
+    delay: 0.1, // Um pequeno atraso para garantir que a saída terminou completamente
+    onComplete: done, // Novamente, avisamos ao Vue quando a animação de entrada termina.
+  })
+}
+const onLeaveHoverMessage = (el, done) => {
+  gsap.to(el, {
+    opacity: 0,
+    scale: 0.9,
+    y: 40,
+    duration: 0.4,
+    ease: 'power2.in',
+    // onComplete é ESSENCIAL: ele chama a função 'done' para avisar ao Vue que a animação terminou.
+    onComplete: done,
+  })
+}
+
+watch(hoverMessage, () => {}, { deep: true })
+
 const continueConversation = () => {
   emit('toggle-chat')
 }
@@ -96,7 +139,7 @@ const startConversation = () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  height: 100dvh;
   padding: 2rem;
 }
 
@@ -134,6 +177,15 @@ const startConversation = () => {
   margin: 0.25rem 0 0 0;
   font-size: 1rem;
   color: #b0b0b0; /* Cor secundária para a descrição */
+  position: relative;
+}
+
+.hover-message {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
 /* Aumenta um pouco o tamanho do avatar "xlarge" padrão */

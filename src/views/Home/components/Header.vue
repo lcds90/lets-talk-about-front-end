@@ -3,6 +3,8 @@
     icon="pi pi-arrow-left"
     class="p-button-text p-button-rounded mr-2"
     @click="$emit('return')"
+    variant="outlined"
+    severity="help"
   />
   <Avatar :image="avatar" size="large" shape="circle" />
   <div class="flex flex-column ml-2">

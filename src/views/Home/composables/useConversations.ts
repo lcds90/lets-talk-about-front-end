@@ -12,10 +12,7 @@ export enum ConversationPayload {
 }
 
 const getCurrentTime = () => {
-  return new Date().toLocaleTimeString('pt-BR', {
-    hour: 'numeric',
-    minute: '2-digit',
-  })
+  return new Date().toISOString()
 }
 
 export const useConversations = defineStore('conversations', () => {
@@ -29,12 +26,7 @@ export const useConversations = defineStore('conversations', () => {
       type: 'date',
       direction: 'system',
       content: {
-        payload: new Date().toLocaleDateString('pt-BR', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }),
+        payload: getCurrentTime(),
         type: 'text',
       },
     },
@@ -303,7 +295,7 @@ export const useConversations = defineStore('conversations', () => {
         // O payload aqui poderia ser o texto do botão clicado, por exemplo
         payload: `Quero saber sobre "${buttonPayload}"`,
       },
-      time: new Date().toLocaleTimeString('pt-BR', { hour: 'numeric', minute: '2-digit' }),
+      time: new Date().toISOString(),
     }
     messages.value.push(userMessage)
 
@@ -324,6 +316,44 @@ export const useConversations = defineStore('conversations', () => {
     console.log(newMessage.value)
   }
 
+  const updateDate = () => {
+    const newDate: Message = {
+      id: messages.value.length + 1,
+      type: 'date',
+      direction: 'system',
+      content: {
+        payload: getCurrentTime(),
+        type: 'text',
+      },
+    }
+
+    const getLastDate = messages.value.findLast(({ type }) => type === 'date')
+    if (getLastDate) {
+      const {
+        content: { payload: lastDateRegistered },
+      } = getLastDate
+      const newDateISO = newDate.content.payload.slice(0, 10)
+      const lastDateISO = lastDateRegistered.slice(0, 10)
+      const isSameDay = newDateISO === lastDateISO
+      if (isSameDay) return
+      messages.value.push(newDate)
+    }
+  }
+
+  const parseDate = ({ date, style }: { date: string; style: 'date' | 'time' }) => {
+    const styles: Record<'date' | 'time', Intl.DateTimeFormatOptions> = {
+      date: {
+        dateStyle: 'short',
+      },
+      time: {
+        timeStyle: 'short',
+      },
+    }
+
+    const { format } = Intl.DateTimeFormat('pt-BR', styles[style])
+    return format(new Date(date))
+  }
+
   return {
     conversationFlows,
     hasMessagesInHistory,
@@ -331,7 +361,9 @@ export const useConversations = defineStore('conversations', () => {
     newMessage,
     stillTyping,
     handleButtonClick,
+    parseDate,
     resetMessages,
     sendMessage,
+    updateDate,
   }
 })

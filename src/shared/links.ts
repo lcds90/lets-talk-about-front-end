@@ -69,5 +69,5 @@ export const items: DefaultTheme.SidebarItem[] = [
 export const socialLinks: DefaultTheme.SocialLink[] = [
   { icon: 'github', link: 'https://github.com/lcds90' },
   { icon: 'linkedin', link: 'https://www.linkedin.com/in/lcds90/' },
-  { icon: 'youtube', link: 'https://www.linkedin.com/in/lcds90/' },
+  // { icon: 'youtube', link: 'https://www.linkedin.com/in/lcds90/' },
 ]

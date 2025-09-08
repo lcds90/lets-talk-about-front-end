@@ -1,27 +1,22 @@
-import { computed } from 'vue'
+import { defineStore } from 'pinia'
+import { computed, ref } from 'vue'
 
-export const useGreetings = () => {
+export const useGreetings = defineStore('greeting', () => {
+  const hoverMessage = ref('')
   const getGreeting = computed(() => {
-    type Times = 'default' | 'morning' | 'afternoon' | 'night'
-    const messages: Record<Times, string> = {
-      afternoon: 'Boa tarde',
-      morning: 'Bom dia',
-      night: 'Boa noite',
-      default: 'Seja bem vindo',
-    }
-
     const d = new Date()
     const hour = d.getHours()
 
-    let time: Times = 'default'
-    if (hour < 12 && hour >= 6) time = 'morning'
-    if (hour > 12 && hour < 18) time = 'afternoon'
-    if (hour > 18 && hour < 24) time = 'night'
+    let time = '🌆'
+    if (hour < 12 && hour >= 6) time = '⛅'
+    if (hour > 12 && hour < 18) time = '🌄'
+    if (hour > 18 && hour < 24) time = '🌃'
 
-    return messages[time]
+    return `Desenvolvedor senior front-end ${time}`
   })
 
   return {
+    hoverMessage,
     getGreeting,
   }
-}
+})
