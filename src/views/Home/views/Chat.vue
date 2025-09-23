@@ -115,7 +115,7 @@ watch(
   background-color: #ffffff;
   height: 100vh;
   display: grid;
-  grid-template-rows: 10dvh 1fr max-content;
+  grid-template-rows: max-content 1fr max-content;
 }
 
 .chat-header {
@@ -154,5 +154,15 @@ watch(
 .messages-area::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-bottom: 8dvh;
+}
+
+@media screen and (max-width: 440px) {
+  :deep(.p-toolbar-end) {
+    flex-grow: 1;
+  }
+
+  :deep(.p-toolbar-end > div) {
+    width: 100%;
+  }
 }
 </style>
