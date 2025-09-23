@@ -31,6 +31,7 @@ const mapperIcons: Record<string, string> = {
   github: 'pi pi-github',
   linkedin: 'pi pi-linkedin',
   youtube: 'pi pi-youtube',
+  gmail: 'pi pi-inbox',
 }
 
 // A ref continua sendo um array de elementos <a>.
@@ -89,7 +90,7 @@ const playAnimation = ({ index, icon }: { index: number; icon: string }) => {
     '-=0.5'
   )
 
-  hoverMessage.value = `Acesse meu ${icon}!`
+  hoverMessage.value = `Entre em contato via ${icon}!`
 }
 
 const stopCurrentAnimation = () => {

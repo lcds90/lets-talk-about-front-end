@@ -28,8 +28,6 @@ function onLeave(el, done) {
   // Animação de saída: o perfil encolhe, move um pouco para baixo e desaparece.
   gsap.to(el, {
     opacity: 0,
-    scale: 0.9,
-    y: 40,
     duration: 0.4,
     ease: 'power2.in',
     // onComplete é ESSENCIAL: ele chama a função 'done' para avisar ao Vue que a animação terminou.
@@ -43,7 +41,6 @@ function onEnter(el, done) {
   // Usamos .from() que é perfeito para animações de entrada.
   gsap.from(el, {
     opacity: 0,
-    y: 50,
     duration: 0.5,
     ease: 'power2.out',
     delay: 0.1, // Um pequeno atraso para garantir que a saída terminou completamente
