@@ -71,7 +71,7 @@ const profileDescription = ref(null)
 const profileCta = ref(null)
 const profileContinue = ref(null)
 const profileHoverMessage = ref(null)
-const videoPlaying = ref('../../../public/Cenário_Galáctico_Gerado_para_Portfólio.mp4')
+const videoPlaying = ref('public/Cenário_Galáctico_Gerado_para_Portfólio.mp4')
 const emit = defineEmits(['toggle-chat'])
 
 const { profile } = storeToRefs(useGravatarProfile())
@@ -133,7 +133,7 @@ const onLeaveHoverMessage = (el, done) => {
 watch(hoverMessage, () => {}, { deep: true })
 
 // const animateToggle = () => {
-//   videoPlaying.value = '../../../public/Cometa_Explodindo_Gerado_em_Vídeo.mp4'
+//   videoPlaying.value = 'public/Cometa_Explodindo_Gerado_em_Vídeo.mp4'
 //   const tl = gsap.timeline({
 //     defaults: { ease: 'power3.out' },
 //     onComplete: () => {
@@ -191,7 +191,7 @@ const createFragments = (element, container, rows = 10, cols = 10) => {
 const animateToggle = () => {
   if (!profileCard.value || !fragmentsContainer.value) return
 
-  videoPlaying.value = '../../../public/Cometa_Explodindo_Gerado_em_Vídeo.mp4'
+  videoPlaying.value = 'public/Cometa_Explodindo_Gerado_em_Vídeo.mp4'
 
   // Passo 1: Posicionar o contêiner de fragmentos e criar os fragmentos
   const cardRect = profileCard.value.getBoundingClientRect()
