@@ -1,7 +1,24 @@
 <template>
   <div class="profile-card-container">
     <div class="video-background-container">
-      <video class="video-background" :src="videoPlaying" autoplay loop muted playsinline></video>
+      <video
+        class="video-background"
+        v-show="!isGoingToChat"
+        src="/Cenário_Galáctico_Gerado_para_Portfólio.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+      <video
+        class="video-background"
+        v-show="isGoingToChat"
+        src="/Cometa_Explodindo_Gerado_em_Vídeo.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
       <div ref="fragmentsContainer" class="fragments-container"></div>
 
       <div ref="profileCard" class="content-overlay">
@@ -71,7 +88,7 @@ const profileDescription = ref(null)
 const profileCta = ref(null)
 const profileContinue = ref(null)
 const profileHoverMessage = ref(null)
-const videoPlaying = ref('/Cenário_Galáctico_Gerado_para_Portfólio.mp4')
+const isGoingToChat = ref(false)
 const emit = defineEmits(['toggle-chat'])
 
 const { profile } = storeToRefs(useGravatarProfile())
@@ -191,7 +208,7 @@ const createFragments = (element, container, rows = 10, cols = 10) => {
 const animateToggle = () => {
   if (!profileCard.value || !fragmentsContainer.value) return
 
-  videoPlaying.value = '/Cometa_Explodindo_Gerado_em_Vídeo.mp4'
+  isGoingToChat.value = true
 
   // Passo 1: Posicionar o contêiner de fragmentos e criar os fragmentos
   const cardRect = profileCard.value.getBoundingClientRect()
