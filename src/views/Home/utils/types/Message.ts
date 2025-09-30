@@ -20,6 +20,9 @@ export enum ConversationPayload {
   POSTS = 'posts',
   EXPERIENCE = 'experience',
   CONTACT = 'contact',
+  POSTS_VUE = 'posts_vue',
+  POSTS_GSAP = 'posts_gsap',
+  POSTS_TYPESCRIPT = 'posts_typescript',
 }
 
 // Interface para um botão, para manter o conteúdo de texto mais limpo.

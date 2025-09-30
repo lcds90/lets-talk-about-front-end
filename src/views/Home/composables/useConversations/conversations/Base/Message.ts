@@ -1,4 +1,4 @@
-import { Sender } from '../../../utils/types'
+import { Sender } from 'src/views/Home/utils/types'
 import { Content, TextContent } from './Content'
 
 /**

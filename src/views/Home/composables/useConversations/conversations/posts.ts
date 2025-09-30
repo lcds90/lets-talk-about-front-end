@@ -1,5 +1,5 @@
-import { getCurrentTime } from '../../utils/date'
-import { ConversationPayload, SenderParams } from '../../utils/types'
+import { getCurrentTime } from '../../../utils/date'
+import { SenderParams, ConversationPayload } from '../../../utils/types'
 import { TextContent, ImageContent } from './Base/Content'
 import { BaseMessage, UserMessage } from './Base/Message'
 
@@ -24,6 +24,9 @@ export const createPostsFlow = ({ botSender }: SenderParams): BaseMessage[] => [
     7,
     'received',
     new TextContent('O que mais te interessa?', [
+      { text: 'Ver posts sobre Vue.js', payload: ConversationPayload.POSTS_VUE },
+      { text: 'Ver posts sobre GSAP', payload: ConversationPayload.POSTS_GSAP },
+      { text: 'Ver posts sobre TypeScript', payload: ConversationPayload.POSTS_TYPESCRIPT },
       { text: 'Experiência profissional', payload: ConversationPayload.EXPERIENCE },
       { text: 'Entrar em contato', payload: ConversationPayload.CONTACT },
     ]),

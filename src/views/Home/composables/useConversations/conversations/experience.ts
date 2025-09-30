@@ -1,5 +1,5 @@
-import { getCurrentTime } from '../../utils/date'
-import { ConversationPayload, SenderParams } from '../../utils/types'
+import { getCurrentTime } from '../../../utils/date'
+import { SenderParams, ConversationPayload } from '../../../utils/types'
 import { TextContent } from './Base/Content'
 import { BaseMessage, UserMessage } from './Base/Message'
 

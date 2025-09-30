@@ -1,21 +1,22 @@
 import { computed, ref } from 'vue'
-import { ConversationPayload, Message, Sender, SenderParams } from '../utils/types/Message'
+import { ConversationPayload, Message, Sender, SenderParams } from '../../utils/types/Message'
 import { defineStore, storeToRefs } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
-import { useGravatarProfile } from './useGravatarProfile'
-import { BaseMessage } from './conversations/Base/Message'
-import { ConversationManager } from './conversations'
-import { getCurrentTime } from '../utils/date'
-import { createContactFlow } from './conversations/contact'
-import { createExperienceFlow } from './conversations/experience'
-import { createInitialFlow } from './conversations/intro'
-import { createPostsFlow } from './conversations/posts'
+import { useGravatarProfile } from '../useGravatarProfile'
+import { getCurrentTime } from '../../utils/date'
+import {
+  BaseMessage,
+  createPostsFlow,
+  createExperienceFlow,
+  createContactFlow,
+  ConversationManager,
+  createInitialFlow,
+} from './conversations'
 
 export const useConversations = defineStore('conversations', () => {
   const newMessage = ref('')
   const stillTyping = ref<'user' | 'chatbot' | null>(null)
   const { profile } = storeToRefs(useGravatarProfile())
-
   const userSender = computed<Sender>(() => ({ name: 'User' }))
   const botSender = computed<Sender>(() => ({ name: 'Leonardo', avatar: profile.value.img }))
 
@@ -85,7 +86,10 @@ export const useConversations = defineStore('conversations', () => {
   }
 
   const resetMessages = () => {
-    messages.value = createInitialFlow({ botSender: botSender.value, userSender: userSender.value })
+    messages.value = createInitialFlow({
+      botSender: botSender.value,
+      userSender: userSender.value,
+    })
     newMessage.value = ''
   }
 

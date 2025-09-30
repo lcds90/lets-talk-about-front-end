@@ -1,0 +1,26 @@
+{
+    "pt": {
+        "intro": {
+            "greeting": "Você iniciou uma conversa com o Assistente de Portfólio ✨",
+            "askName": "Olá, me fale mais sobre o Leonardo!",
+            "about": "Olá! Sou o Leonardo, desenvolvedor front-end com 5+ anos de experiência. Tenho paixão por criar interfaces interativas e acessíveis. O que você gostaria de saber primeiro?"
+        },
+        "payload": {
+            "posts": "Ver posts de tecnologias",
+            "experience": "Experiência profissional",
+            "contact": "Contato"
+        }
+    },
+    "en": {
+        "intro": {
+            "greeting": "You have started a conversation with the Portfolio Assistant ✨",
+            "askName": "Hello, tell me more about Leonardo!",
+            "about": "Hello! I'm Leonardo, a front-end developer with 5+ years of experience. I have a passion for creating interactive and accessible interfaces. What would you like to know first?"
+        },
+        "payload": {
+            "posts": "See technology posts",
+            "experience": "Professional experience",
+            "contact": "Contact"
+        }
+    }
+}

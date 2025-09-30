@@ -1,8 +1,7 @@
+import { SenderParams, Sender } from 'src/views/Home/utils/types'
 import { ref, Ref } from 'vue'
-
-import { Sender, SenderParams } from '../../utils/types'
-import { BaseMessage, UserMessage } from './Base/Message'
-import { TextContent } from './Base/Content'
+import { TextContent } from './Content'
+import { BaseMessage, UserMessage } from './Message'
 
 // Para facilitar, definimos um tipo para a coleção de fluxos.
 // Usamos uma função "fábrica" para que os valores reativos sejam lidos no momento da execução.

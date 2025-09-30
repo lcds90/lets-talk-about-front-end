@@ -1,7 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import { createPinia } from 'pinia'
-
+import { createI18n } from 'vue-i18n'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 // import { createManager } from '@vue-youtube/core'
@@ -26,31 +26,35 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
 export default {
-  extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-    })
-  },
-  enhanceApp({ app, router, siteData }) {
-    const pinia = createPinia()
-    library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
-    // app.use(createManager())
-    app.use(pinia)
-    app.use(PrimeVue, {
-      theme: {
-        preset,
-      },
-    })
-    app.component('font-awesome-icon', FontAwesomeIcon)
-    app.component('FloatLabel', FloatLabel)
-    app.component('InputText', InputText)
-    app.component('Carousel', Carousel)
-    app.component('Toolbar', Toolbar)
-    app.component('Button', Button)
-    app.component('Avatar', Avatar)
-    app.component('Image', Image)
-    app.component('Tag', Tag)
+    extends: DefaultTheme,
+    Layout: () => {
+        return h(DefaultTheme.Layout, null, {
+            // https://vitepress.dev/guide/extending-default-theme#layout-slots
+        })
+    },
+    enhanceApp({ app, router, siteData }) {
+        const pinia = createPinia()
+        const i18n = createI18n({
+            // something vue-i18n options here ...
+        })
+        library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
+        // app.use(createManager())
+        app.use(pinia)
+        app.use(i18n)
+        app.use(PrimeVue, {
+            theme: {
+                preset,
+            },
+        })
+        app.component('font-awesome-icon', FontAwesomeIcon)
+        app.component('FloatLabel', FloatLabel)
+        app.component('InputText', InputText)
+        app.component('Carousel', Carousel)
+        app.component('Toolbar', Toolbar)
+        app.component('Button', Button)
+        app.component('Avatar', Avatar)
+        app.component('Image', Image)
+        app.component('Tag', Tag)
 
-  },
+    },
 } satisfies Theme
