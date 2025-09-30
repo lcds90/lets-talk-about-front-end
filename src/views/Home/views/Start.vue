@@ -238,7 +238,7 @@ const animateToggle = () => {
 
   // Passo 3: A animação de explosão dos fragmentos
   tl.to(fragments, {
-    duration: 4, // Duração da explosão
+    duration: 3, // Duração da explosão
     x: () => gsap.utils.random(-300, 300, 50), // Move para uma posição X aleatória
     y: () => gsap.utils.random(-400, 400, 50), // Move para uma posição Y aleatória
     rotation: () => gsap.utils.random(-720, 720), // Gira aleatoriamente

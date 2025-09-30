@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { Message } from '../types/Message'
+import { Message } from '../utils/types/Message'
 import { computed } from 'vue'
 import { useConversations } from '../composables'
 
