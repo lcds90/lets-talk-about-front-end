@@ -2,13 +2,13 @@ import { DefaultTheme } from 'vitepress'
 export const items: DefaultTheme.SidebarItem[] = [
   {
     text: 'Detalhando APIs da Web',
-    collapsed: false,
+    collapsed: true,
     link: '/posts/apis/',
     items: [{ link: '/posts/apis/url-api', text: 'URL API' }],
   },
   {
     text: 'Estilização com CSS',
-    collapsed: false,
+    collapsed: true,
     link: '/posts/css/',
     items: [
       // { text: 'Flexbox', link: '/posts/css/flexbox' },
@@ -33,13 +33,13 @@ export const items: DefaultTheme.SidebarItem[] = [
   // },
   {
     text: 'Bibliotecas NPM',
-    collapsed: false,
+    collapsed: true,
     link: '/posts/libs/',
     items: [{ link: '/posts/libs/eslint-prettier', text: 'Eslint + Prettier' }],
   },
   {
     text: 'Testes',
-    collapsed: false,
+    collapsed: true,
     link: '/posts/tests/',
     items: [
       { link: '/posts/tests', text: 'Jest' },
@@ -48,9 +48,9 @@ export const items: DefaultTheme.SidebarItem[] = [
   },
   {
     text: 'Vue',
-    collapsed: false,
+    collapsed: true,
     link: '/posts/vue/',
-    items: [],
+    items: [{ link: '/posts/vue/lifecycle', text: 'Lifecycle' }],
   },
 ]
 

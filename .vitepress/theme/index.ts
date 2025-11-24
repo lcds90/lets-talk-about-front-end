@@ -35,6 +35,7 @@ export default {
     enhanceApp({ app, router, siteData }) {
         const pinia = createPinia()
         const i18n = createI18n({
+            legacy: false,
             // something vue-i18n options here ...
         })
         library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
