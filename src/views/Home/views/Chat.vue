@@ -3,10 +3,11 @@ import { ref, onMounted, nextTick, watch } from 'vue'
 
 import { Header, MessageSystem, MessageUser } from '../components'
 
-import { ConversationPayload, useConversations, useGravatarProfile } from '../composables'
+import { useConversations, useGravatarProfile } from '../composables'
 import { storeToRefs } from 'pinia'
 import MessageTyping from '../components/MessageTyping.vue'
 import SocialLinks from '../components/SocialLinks.vue'
+import { ConversationPayload } from '../utils/types'
 
 const conversationsStore = useConversations()
 const { messages, newMessage, stillTyping } = storeToRefs(conversationsStore)

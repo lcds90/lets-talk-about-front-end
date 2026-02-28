@@ -11,6 +11,7 @@ import {
   createContactFlow,
   ConversationManager,
   createInitialFlow,
+  createPostsVueFlow,
 } from './conversations'
 
 export const useConversations = defineStore('conversations', () => {
@@ -24,6 +25,7 @@ export const useConversations = defineStore('conversations', () => {
     [ConversationPayload.POSTS, createPostsFlow],
     [ConversationPayload.EXPERIENCE, createExperienceFlow],
     [ConversationPayload.CONTACT, createContactFlow],
+    [ConversationPayload.POSTS_VUE, createPostsVueFlow],
   ])
   const chat = new ConversationManager(
     conversationFlows,

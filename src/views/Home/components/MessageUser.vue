@@ -25,7 +25,7 @@
             v-for="button in msg.content.buttons"
             :key="button.payload"
             :label="button.text"
-            @click="$emit('on-button-click', button.payload)"
+            @click="() => handleClick(button.payload, button.onClick)"
             severity="help"
             outlined
             size="small"
@@ -56,7 +56,14 @@ interface Props {
 const { parseDate } = useConversations()
 const props = defineProps<Props>()
 const messageAvatar = computed(() => (props.msg.sender?.avatar ? props.msg.sender.avatar : ''))
-defineEmits(['on-button-click'])
+const emit = defineEmits(['on-button-click'])
+
+const handleClick = (payload: string, onClick?: () => void) => {
+  if (onClick) {
+    onClick()
+  }
+  emit('on-button-click', payload)
+}
 </script>
 
 <style scoped>

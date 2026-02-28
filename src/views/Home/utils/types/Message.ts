@@ -3,7 +3,7 @@ export interface Message {
   time?: string
   content: {
     payload: string
-    buttons?: { text: string; payload: string }[]
+    buttons?: { text: string; payload: string; onClick?: () => void }[]
     type: 'image' | 'text'
   }
   sender?: {
@@ -29,6 +29,7 @@ export enum ConversationPayload {
 export interface Button {
   text: string
   payload: string
+  onClick?: () => void
 }
 
 // Interface para o remetente da mensagem.

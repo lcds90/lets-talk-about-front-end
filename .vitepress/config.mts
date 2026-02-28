@@ -61,6 +61,7 @@ export default defineConfig({
         '@components': __dirname + '/src/components/',
       },
     },
+    
     plugins: [eslint({})],
     server: {
       proxy: {

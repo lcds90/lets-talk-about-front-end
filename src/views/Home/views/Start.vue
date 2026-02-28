@@ -197,8 +197,6 @@ const createFragments = (element, container, rows = 10, cols = 10) => {
       fragment.style.left = `${j * fragmentWidth}px`
       fragment.style.top = `${i * fragmentHeight}px`
       fragment.style.background = backgroundColor
-      // Para um efeito mais avançado, você poderia usar background-position
-      // para cada fragmento mostrar uma parte do conteúdo original.
 
       container.appendChild(fragment)
     }

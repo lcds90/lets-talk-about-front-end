@@ -24,11 +24,50 @@ export const createPostsFlow = ({ botSender }: SenderParams): BaseMessage[] => [
     7,
     'received',
     new TextContent('O que mais te interessa?', [
-      { text: 'Ver posts sobre Vue.js', payload: ConversationPayload.POSTS_VUE },
+      {
+        text: 'Ver posts sobre Vue.js',
+        payload: ConversationPayload.POSTS_VUE,
+      },
       { text: 'Ver posts sobre GSAP', payload: ConversationPayload.POSTS_GSAP },
       { text: 'Ver posts sobre TypeScript', payload: ConversationPayload.POSTS_TYPESCRIPT },
       { text: 'Experiência profissional', payload: ConversationPayload.EXPERIENCE },
       { text: 'Entrar em contato', payload: ConversationPayload.CONTACT },
+    ]),
+    botSender,
+    getCurrentTime()
+  ),
+]
+
+export const createPostsVueFlow = ({ botSender }: SenderParams): BaseMessage[] => [
+  new UserMessage(
+    13,
+    'received',
+    new TextContent('Aqui estão alguns dos meus posts sobre Vue.js:\n\n', [
+      {
+        text: 'Listagem de posts sobre Vue.js',
+        payload: 'Postagem de vue',
+        onClick: () => {
+          const a = document.createElement('a')
+          a.href = '/posts/vue'
+
+          // Cria um evento de clique simulando a tecla CTRL pressionada
+          const evt = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+            ctrlKey: true, // Tenta forçar o comportamento de aba em segundo plano
+          })
+
+          console.log('Simulating click with CTRL key to open in new tab')
+
+          a.dispatchEvent(evt)
+        },
+      },
+      {
+        text: 'Ciclo de vida dos componentes Vue',
+        payload: 'Postagem de lifecycle vue',
+        onClick: () => window.open('/posts/vue/lifecycle'),
+      },
     ]),
     botSender,
     getCurrentTime()

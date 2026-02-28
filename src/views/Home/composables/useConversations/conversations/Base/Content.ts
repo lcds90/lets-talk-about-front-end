@@ -34,6 +34,7 @@ export class TextContent extends Content {
    */
   constructor(payload: string, buttons?: Button[]) {
     super('text', payload)
+    console.log('Buttons in TextContent:', buttons)
     this.buttons = buttons
   }
 }
