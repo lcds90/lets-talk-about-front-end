@@ -24,7 +24,13 @@ import { faPlayCircle, faUser, faTerminal } from '@fortawesome/free-solid-svg-ic
 import { faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { pt as ptAbuout } from '../../src/views/About/i18n'
 
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 export default {
     extends: DefaultTheme,
     Layout: () => {
@@ -36,8 +42,14 @@ export default {
         const pinia = createPinia()
         const i18n = createI18n({
             legacy: false,
-            // something vue-i18n options here ...
-        })
+            locale: navigator.language || 'en',
+            fallbackLocale: 'en',
+            messages: {
+                pt: {
+                    ...ptAbuout
+                }
+            },
+            })
         library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
         // app.use(createManager())
         app.use(pinia)

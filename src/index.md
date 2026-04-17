@@ -28,7 +28,7 @@ title: 'Leonardo Conceição dos Santos - Desenvolvedor Front-end'
 ---
 
 <script setup>
-import Portfolio from './views/Home/index.vue'
+import Portfolio from './views/About/index.vue'
 </script>
 
 <Portfolio />

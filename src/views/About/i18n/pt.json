@@ -1,0 +1,139 @@
+{
+  "about": {
+    "title": "Leonardo Santos",
+    "subtitle": "Engenheiro de Software Sênior | Tech, Beats & Cats 🐈‍⬛",
+    "p1": "Com **5 anos de experiência** no ecossistema web, foco em construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
+    "p2": "Especialista em **Vue.js**, **Node.js** e **Micro-frontends**, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
+    "p3": "Quando não estou otimizando pipelines ou mentorando times, provavelmente estou ouvindo algum lo-fi com meus gatos ou explorando novas sonoridades. 🐾",
+    "stats": {
+      "stack": "Main Stack",
+      "stack_desc": "Vue 3, Node.js & TypeScript 💻",
+      "vibe": "Vibe",
+      "vibe_desc": "Produção Musical & Gatos 🎹🐈",
+      "focus": "Foco Atual",
+      "focus_desc": "Design Systems & Micro-frontends 🏗️"
+    }
+  },
+  "experience": {
+    "title": "Experiência Profissional 🎤",
+    "jobs": [
+      {
+        "company": "Zenvia",
+        "role": "Engenheiro de Software Sênior (Promovido de Júnior e Pleno)",
+        "period": "Nov 2021 - Atual",
+        "location": "São Paulo - SP",
+        "description": "",
+        "achievements": [
+          "<strong>Arquitetura e Desenvolvimento Fullstack:</strong> Liderança no desenvolvimento escalável utilizando arquiteturas de Micro-frontends e múltiplos frameworks (Vue 2/3, React, Angular e Node.js). Construção e manutenção do Design System corporativo utilizando Web Components e Stencil.",
+          "<strong>Ferramentas Visuais Complexas:</strong> Arquitetura de um construtor de campanhas multi-projeto sofisticado utilizando bibliotecas de diagramação (GoJS, ReactFlow). Desenvolvimento de uma ferramenta de gestão de anúncios externos integrada com a API do Meta.",
+          "<strong>Liderança Técnica e Estratégia:</strong> Atuação em refinamentos técnicos, análises de viabilidade e PI Plannings. Mentoria de desenvolvedores juniores e criação de processos de onboarding otimizados para aumentar a eficiência da equipe.",
+          "<strong>UX Orientada a Dados e Analytics:</strong> Otimização contínua da experiência do usuário através da implementação de pipelines de coleta de dados. Acompanhamento de KPIs e análise de padrões comportamentais via GA4, Universal Analytics e FullStory para conectar soluções técnicas às metas de negócio.",
+          "<strong>Entrega Ágil:</strong> Influência ativa na direção do produto através de análises de viabilidade e tomada de decisões de negócio. Promoção do alinhamento entre diferentes áreas em cerimônias de PI Planning e elaboração de documentação técnica sobre experimentos analíticos."
+        ],
+        "hasCat": true
+      },
+      {
+        "company": "Lacrei Saúde",
+        "role": "Tech Lead (Voluntário)",
+        "period": "Jan 2023 - Jun 2023",
+        "location": "São Paulo - SP",
+        "description": "",
+        "achievements": [
+          "<strong>Liderança Técnica e Operações:</strong> Estabelecimento e implementação de fluxos de desenvolvimento de software altamente eficazes, gestão de delegação de tarefas e coordenação das atividades da equipe para garantir uma execução fluida.",
+          "<strong>Alinhamento de Produto e Estratégia:</strong> Parceria próxima com o time de Produto para traduzir requisitos de usuários em entregáveis técnicos, garantindo que as soluções atendessem tanto aos objetivos de negócio quanto às necessidades dos usuários.",
+          "<strong>Garantia de Qualidade e Mentoria:</strong> Aplicação de altos padrões de qualidade de código e entregas pontuais através de revisões de código (code reviews) rigorosas e testes. Mentoria direta para resolver impedimentos técnicos complexos e fomentar o crescimento da equipe."
+        ],
+        "hasCat": false
+      }
+    ]
+  },
+  "hero": {
+    "name": "Leonardo Santos",
+    "role": "Desenvolvedor Sênior | Tech, Beats & Cats 🐈‍⬛"
+  },
+  "education": {
+    "title": "Backstage & Hits (Formação e Certificações) 🎫",
+    "academicTitle": "Formação Acadêmica",
+    "certsTitle": "Certificações",
+    "academic": [
+      {
+        "course": "Desenvolvimento Web Full Stack",
+        "institution": "Trybe",
+        "period": "2021 - 2022",
+        "description": "Formação intensiva com mais de 1.500 horas de projetos práticos, abordando fundamentos de Desenvolvimento Front-end, Back-end, Ciência da Computação e Engenharia de Software."
+      },
+      {
+        "course": "Sistemas para Internet",
+        "institution": "Uninove - Universidade Nove de Julho",
+        "period": "2018 - 2020",
+        "description": "Graduação focada em arquitetura web, desenvolvimento de sistemas, modelagem de banco de dados e design de interfaces para aplicações na internet."
+      }
+    ],
+    "certs": [
+      {
+        "name": "Vue.js Professional Certification",
+        "date": "Previsão: Maio 2026",
+        "icon": "🟩"
+      },
+      {
+        "name": "Web Development",
+        "date": "Setembro 2022",
+        "icon": "💻"
+      },
+      {
+        "name": "Computer Science",
+        "date": "Agosto 2022",
+        "icon": "⚙️"
+      },
+      {
+        "name": "Backend Development",
+        "date": "Julho 2022",
+        "icon": "🔌"
+      },
+      {
+        "name": "Frontend Development",
+        "date": "Outubro 2021",
+        "icon": "🎨"
+      },
+      {
+        "name": "Avanade Angular Developer",
+        "date": "Junho 2021",
+        "icon": "🅰️"
+      },
+      {
+        "name": "Node.JS",
+        "date": "Fevereiro 2021",
+        "icon": "🟢"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vamos fazer um som? 🎧",
+    "subtitle": "Pronto para orquestrar o próximo grande projeto ou apenas bater um papo sobre tech e gatos.",
+    "email_label": "Me mande um e-mail",
+    "linkedin_label": "LinkedIn",
+    "github_label": "GitHub",
+    "whatsapp_label": "WhatsApp",
+    "music_subtitle": "Ouça as minhas produções:",
+    "youtube_label": "YouTube",
+    "bandlab_label": "BandLab",
+    "suno_label": "Suno AI"
+  },
+  "languages": {
+    "title": "Voice Tracks (Idiomas) 🎙️",
+    "items": [
+      {
+        "name": "Português",
+        "level": "Nativo",
+        "flag": "🇧🇷",
+        "description": "Comunicação fluida para orquestrar qualquer projeto e liderar equipas."
+      },
+      {
+        "name": "Inglês",
+        "level": "Intermediário",
+        "flag": "🇺🇸",
+        "description": "Leitura de docs, pull requests e daily meetings sem perder o ritmo."
+      }
+    ]
+  }
+}
