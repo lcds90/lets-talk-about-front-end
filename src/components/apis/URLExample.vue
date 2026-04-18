@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
-const currentURL = ref(window.location.href)
+const currentURL = ref('')
 const urlApiResult = computed(() =>
   URL.canParse(currentURL.value) ? new URL(currentURL.value) : null
 )
 const logToConsole = () => console.log(urlApiResult.value)
+
+onMounted(() => {
+  currentURL.value = window?.location.href || ''
+})
 </script>
 <template>
   <section class="container">

@@ -16,7 +16,7 @@ let ctx: gsap.Context
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    if (!animWrap.value || !horizontalSection.value || !pinWrap.value) return
+    if (!animWrap.value || !horizontalSection.value || !pinWrap.value || !window) return
 
     const getToValue = () => -(animWrap.value!.scrollWidth - window.innerWidth)
 

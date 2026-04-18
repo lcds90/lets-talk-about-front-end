@@ -59,13 +59,14 @@ const posts = computed(() => {
     .sort((a, b) => b.quantity - a.quantity)
 })
 
-const windowWidth = ref(window.innerWidth)
+const windowWidth = ref(0)
 
 const handleResize = () => {
   windowWidth.value = window.innerWidth
 }
 
 onMounted(() => {
+  handleResize()
   window.addEventListener('resize', handleResize)
 })
 

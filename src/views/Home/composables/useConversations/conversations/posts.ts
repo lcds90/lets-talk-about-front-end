@@ -49,7 +49,7 @@ export const createPostsVueFlow = ({ botSender }: SenderParams): BaseMessage[] =
         onClick: () => {
           const a = document.createElement('a')
           a.href = '/posts/vue'
-
+          if (!window) return
           // Cria um evento de clique simulando a tecla CTRL pressionada
           const evt = new MouseEvent('click', {
             bubbles: true,
@@ -66,7 +66,7 @@ export const createPostsVueFlow = ({ botSender }: SenderParams): BaseMessage[] =
       {
         text: 'Ciclo de vida dos componentes Vue',
         payload: 'Postagem de lifecycle vue',
-        onClick: () => window.open('/posts/vue/lifecycle'),
+        onClick: () => window ? window.open('/posts/vue/lifecycle') : null,
       },
     ]),
     botSender,

@@ -106,13 +106,14 @@ const techsThatIKnow = computed(() => ({
   ],
 }))
 
-const windowWidth = ref(window.innerWidth)
+const windowWidth = ref(0)
 
 const handleResize = () => {
   windowWidth.value = window.innerWidth
 }
 
 onMounted(() => {
+  handleResize()
   window.addEventListener('resize', handleResize)
 })
 

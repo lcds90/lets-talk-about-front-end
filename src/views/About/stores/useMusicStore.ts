@@ -27,7 +27,7 @@ export const useMusicStore = defineStore('music', () => {
   const audio = shallowRef<HTMLAudioElement | null>(null)
 
   const initAudio = () => {
-    if (audio.value) return
+    if (typeof window === 'undefined' || audio.value) return
 
     currentTrackIndex.value = Math.floor(Math.random() * playlist.length)
     const track = playlist[currentTrackIndex.value]
@@ -79,6 +79,7 @@ export const useMusicStore = defineStore('music', () => {
   }
 
   const applyThemeColor = (hexColor: string) => {
+    if (typeof document === 'undefined') return
     const root = document.documentElement
     root.style.setProperty('--primary-color', hexColor)
     root.style.setProperty('--p-primary-color', hexColor)

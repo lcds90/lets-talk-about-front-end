@@ -42,7 +42,7 @@ export default {
         const pinia = createPinia()
         const i18n = createI18n({
             legacy: false,
-            locale: navigator.language || 'en',
+            locale: 'en',
             fallbackLocale: 'en',
             messages: {
                 pt: {
