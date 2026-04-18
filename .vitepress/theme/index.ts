@@ -28,7 +28,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { pt as ptAbuout } from '../../src/views/About/i18n'
 
-if (typeof window !== 'undefined') {
+if (window && typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 export default {
