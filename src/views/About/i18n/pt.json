@@ -4,14 +4,14 @@
     "subtitle": "Leonardo Santos, Paulista de 28 anos",
     "p1": "Com <strong>5 anos de experiência</strong> no ecossistema web, meu foco é construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
     "p2": "Especialista em <strong>Vue.js</strong>, <strong>Node.js</strong> e <strong>Micro-frontends</strong>, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
-    "p3": "Quando não estou otimizando pipelines ou mentorando times, provavelmente estou ouvindo algum lo-fi com meus gatos ou explorando novas sonoridades. 🐾",
+    "p3": "Quando não estou vendo sobre tecnologia, provavelmente estou ouvindo brincando com meus gatos ou explorando novas sonoridades e possibilidades. 🐾",
     "stats": {
       "stack": "Main Stack",
       "stack_desc": "Vue 3, Node.js & TypeScript 💻",
       "vibe": "Vibe",
-      "vibe_desc": "Produção Musical & Gatos 🎹🐈",
+      "vibe_desc": "Produção Musical 🎹🐈",
       "focus": "Foco Atual",
-      "focus_desc": "Design Systems & Micro-frontends 🏗️"
+      "focus_desc": "Vue, GSAP e Three.JS 🏗️"
     }
   },
   "experience": {
@@ -52,7 +52,7 @@
     "role": "Desenvolvedor Sênior | Tech, Beats & Cats 🐈‍⬛"
   },
   "education": {
-    "title": "Backstage & Hits (Formação e Certificações) 🎫",
+    "title": "Formação e Certificações 🎫",
     "academicTitle": "Formação Acadêmica",
     "certsTitle": "Certificações",
     "view": "Ver Certificado",
@@ -116,7 +116,7 @@
   },
   "contact": {
     "title": "Bora se conectar! 🎧",
-    "subtitle": "Pronto para orquestrar o próximo grande projeto ou apenas bater um papo sobre tech e gatos.",
+    "subtitle": "Pronto para orquestrar o próximo projeto juntos? Me mande um alô! 🚀",
     "email_label": "Me mande um e-mail",
     "linkedin_label": "LinkedIn",
     "github_label": "GitHub",
@@ -127,7 +127,7 @@
     "suno_label": "Suno AI"
   },
   "languages": {
-    "title": "Voice Tracks (Idiomas) 🎙️",
+    "title": "Idiomas 🎙️",
     "items": [
       {
         "name": "Português",

@@ -107,7 +107,7 @@ onUnmounted(() => {
           <div class="section-header mb-6">
             <h2 class="text-5xl md:text-7xl font-bold mb-3 flex align-items-center gap-4">
               <span class="text-primary">{{ t('about.title') }}</span>
-              <span class="music-note inline-block">🎸</span>
+              <span class="music-note inline-block">🎹</span>
             </h2>
             <p class="text-xl md:text-2xl text-500 font-medium tracking-wide uppercase">
               {{ t('about.subtitle') }}
@@ -139,7 +139,7 @@ onUnmounted(() => {
             <span class="text-sm text-500 uppercase font-bold tracking-widest mt-2">
               {{ t('about.stats.stack') }}
             </span>
-            <span class="text-2xl font-bold text-100">{{ t('about.stats.stack_desc') }}</span>
+            <span class="text-2xl font-bold text-900">{{ t('about.stats.stack_desc') }}</span>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ onUnmounted(() => {
             <span class="text-sm text-500 uppercase font-bold tracking-widest mt-2">
               {{ t('about.stats.vibe') }}
             </span>
-            <span class="text-2xl font-bold text-100">{{ t('about.stats.vibe_desc') }}</span>
+            <span class="text-2xl font-bold text-900">{{ t('about.stats.vibe_desc') }}</span>
 
             <div class="eq-bars flex align-items-end gap-2 h-3rem mt-2">
               <span class="bar bg-pink-500 w-1rem"></span>
@@ -200,7 +200,7 @@ onUnmounted(() => {
             <span class="text-sm text-500 uppercase font-bold tracking-widest mt-2">
               {{ t('about.stats.focus') }}
             </span>
-            <span class="text-2xl font-bold text-100">{{ t('about.stats.focus_desc') }}</span>
+            <span class="text-2xl font-bold text-900">{{ t('about.stats.focus_desc') }}</span>
           </div>
         </div>
 

@@ -118,7 +118,7 @@ onUnmounted(() => {
     class="academic-wrapper bg-surface-ground pt-8 pb-4 overflow-hidden font-sans"
   >
     <div class="text-center mb-8">
-      <h2 class="text-5xl font-bold text-primary section-title">{{ t('education.title') }} 🎸</h2>
+      <h2 class="text-5xl font-bold text-primary section-title">{{ t('education.title') }}</h2>
     </div>
 
     <template v-for="(course, index) in tm('education.academic')" :key="'acad-' + index">

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+gsap.registerPlugin(ScrollTrigger)
 
 // Referências para o DOM
 const heroContainer = ref<HTMLElement | null>(null)
@@ -14,7 +16,7 @@ let ctx: gsap.Context
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    // 1. Setup Inicial do Ponto (Escondido e enorme)
+    // 1. Setup Inicial do Ponto (A "Singularidade")
     gsap.set(dotExpand.value, {
       width: '150vmax', // Garante que cobre todos os cantos
       height: '150vmax',
@@ -22,20 +24,25 @@ onMounted(() => {
       yPercent: -50,
       top: '50%',
       left: '50%',
-      scale: 0, // Começa invisível
+      scale: 0,
+      // --- SETUP INICIAL DA IMAGEM ---
+      backgroundImage: "url('/eu.jpg')",
+      backgroundRepeat: 'repeat',
+      backgroundSize: '1% 1%', // Começa como um mosaico minúsculo
+      backgroundPosition: '50% 20%',
+      filter: 'brightness(1.5) contrast(1.1)', // Um pouco de "estouro" de luz no início
     })
 
     // 2. Animação de Entrada Normal (Fade e Float)
-    // 2. Animação de Entrada Normal (Fade e Float)
-    // Usamos o seletor '> *' para animar os filhos (h1, p, ícone) separadamente do pai
     gsap.from('.hero-content > *', {
       opacity: 0,
       y: 50,
       duration: 1.2,
-      stagger: 0.2, // Dá um ritmo musical: entra o título, depois subtítulo, depois a seta
+      stagger: 0.2, // Ritmo musical
       ease: 'power4.out',
     })
 
+    // Flutuação dos Emojis
     gsap.to('.guitar-emoji', {
       y: -10,
       duration: 2,
@@ -44,41 +51,50 @@ onMounted(() => {
       ease: 'sine.inOut',
     })
 
-    // 3. A Mágica do ScrollTrigger (Expansão do Ponto)
+    // 3. Timeline Principal do ScrollTrigger
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heroContainer.value,
         start: 'top top',
         end: 'bottom top',
-        scrub: 1.5, // Suaviza o vínculo com o scroll
-        pin: heroContainer.value, // Prende a secção enquanto o utilizador faz scroll
+        scrub: 1.5, // Vínculo suave com o scroll
+        pin: heroContainer.value,
         pinSpacing: true,
-        invalidateOnRefresh: true, // Recalcula posições se redimensionar a janela
-        // markers: true, // Remova o comentário para debugar
+        invalidateOnRefresh: true,
       },
       defaults: { ease: 'none' },
     })
 
-    // A Timeline: Desvanece o conteúdo e expande o círculo vindo da guitarra
+    // A Timeline: Desvanece o conteúdo e expande/anima o "Portal" da imagem
     tl.to(
       '.hero-content',
       {
-        scale: 0.9,
-        duration: 0.5,
+        opacity: 0.75, // Quase desaparece
+        scale: 0.85,
+        duration: 0.6,
+        x: -400,
+        y: 250,
       },
       0
-    ) // O '0' diz para começar logo
+    )
+      .to(
+        '.hero-content h1',
+        {
+          color: 'rgb(0,0,0)', // Desaparece completamente
+        },
+        '<'
+      )
 
+      // --- A MÁGICA DA IMAGEM ANIMADA ---
       .fromTo(
         dotExpand.value,
         {
           scale: 0,
+          rotation: -15, // Começa girando
           x: () => {
-            // Medimos o fantasma (que não está a flutuar) para garantir precisão
             if (!markGhost.value || !heroContainer.value) return 0
             const markBounds = markGhost.value.getBoundingClientRect()
             const sectionBounds = heroContainer.value.getBoundingClientRect()
-            // Calcula a distância do centro do emoji até ao centro do ecrã
             const px = markBounds.left + markBounds.width / 2
             return px - sectionBounds.width / 2
           },
@@ -93,20 +109,34 @@ onMounted(() => {
         {
           x: 0,
           y: 0,
-          scale: 1, // Expande até cobrir tudo
-          ease: 'power3.in',
+          scale: 1,
+          rotation: 0, // Resolve a rotação
+          ease: 'power4.in',
           duration: 1,
         },
-        '<0.2'
-      ) // Começa logo a seguir ao fade out do texto iniciar
+        '<0.1' // Começa logo após o início do fade do texto
+      )
+
+      // Concorrentemente, animamos o interior da imagem
+      .to(
+        dotExpand.value,
+        {
+          // O mosaico se resolve em uma imagem única (cobertura total)
+          backgroundSize: '130% 100%',
+          // Efeito Ken Burns sutil (foco desliza para uma diagonal)
+          backgroundPosition: '60% 40%',
+          // Retorna a imagem à cor normal
+          filter: 'brightness(1) contrast(1)',
+          ease: 'power2.inOut',
+          duration: 1,
+        },
+        '<0.5'
+      ) // Executa junto com a animação de scale acima
   }, heroContainer.value ?? undefined)
 })
 
-// Uso correto do ciclo de vida do Vue para limpar a memória
 onUnmounted(() => {
-  if (ctx) {
-    ctx.revert()
-  }
+  if (ctx) ctx.revert()
 })
 </script>
 
@@ -115,7 +145,7 @@ onUnmounted(() => {
     ref="heroContainer"
     class="hero-section min-h-screen flex align-items-center justify-content-center overflow-hidden"
   >
-    <div ref="dotExpand" class="dot-expander border-circle absolute z-1"></div>
+    <div ref="dotExpand" class="dot-expander border-circle absolute z-1 shadow-8"></div>
 
     <div class="hero-content text-center px-4 relative z-2">
       <h1 class="text-6xl md:text-8xl font-bold mb-4 relative">
@@ -127,12 +157,12 @@ onUnmounted(() => {
         </span>
       </h1>
 
-      <p class="text-xl md:text-2xl text-400 font-medium tracking-tight mt-6">
+      <p class="text-xl md:text-2xl font-medium tracking-tight mt-6">
         {{ t('hero.role') }}
       </p>
 
-      <div class="scroll-indicator mt-8 opacity-50">
-        <i class="pi pi-chevron-down text-2xl"></i>
+      <div class="scroll-indicator mt-8 text-whiteopacity-70">
+        <i class="pi pi-chevron-down text-3xl"></i>
       </div>
     </div>
   </section>
@@ -141,33 +171,23 @@ onUnmounted(() => {
 <style scoped>
 .hero-section {
   background: transparent;
-  color: #f8fafc;
   position: relative;
-  /* Crucial para o ScrollTrigger prender a altura correta */
   height: 100vh;
 }
 
-/* A cor do ponto que vai dominar o ecrã.
-   Recomendo usar a mesma cor de fundo que você tem na próxima secção (ex: AboutMe)
-   para que a transição seja contínua. */
 .dot-expander {
-  background: #1e293b; /* Cor base mais escura, ajuste para o seu tema */
-  /* O gradiente fica espetacular aqui se quiser testar: */
-  /* background: radial-gradient(circle, #6366f1 0%, #1e293b 80%); */
-  will-change: transform; /* Otimização de performance */
+  /* Removemos as definições de imagem daqui para o GSAP gerenciar */
+  will-change: transform, background-size, background-position;
+  pointer-events: none; /* Não atrapalha cliques se houver algo atrás futuramente */
 }
 
 .emoji-wrapper {
-  /* Mantém o espaço na frase mesmo que a guitarra original seja position absolute */
   display: inline-block;
   min-width: 1em;
 }
 
 .guitar-emoji {
-  filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.4));
-  /* O GSAP não gosta muito de usar translate diretamente no style se ele mesmo for animar com transform.
-     O ideal é deixar ele lidar com tudo, mas isso evita conflitos iniciais. */
-  transform: translateZ(0);
+  filter: drop-shadow(0 0 15px var(--primary-color));
 }
 
 .scroll-indicator {
@@ -183,10 +203,10 @@ onUnmounted(() => {
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
   }
 }
 </style>

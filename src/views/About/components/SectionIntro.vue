@@ -105,7 +105,7 @@ onUnmounted(() => {
           class="scroll-reveal text-5xl md:text-7xl font-bold mb-3 flex align-items-center justify-content-center md:justify-content-start gap-4"
         >
           <span class="text-primary">{{ t('about.title') }}</span>
-          <span class="music-note inline-block">🎸</span>
+          <span class="music-note inline-block">🎹</span>
         </h2>
 
         <p class="scroll-reveal text-xl md:text-2xl text-500 font-medium tracking-wide uppercase">
@@ -154,9 +154,6 @@ onUnmounted(() => {
               >
                 {{ rt(lang.level) }}
               </span>
-              <p v-if="rt(lang.description)" class="m-0 text-400 line-height-3 text-sm">
-                {{ rt(lang.description) }}
-              </p>
             </div>
           </div>
         </div>

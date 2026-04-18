@@ -10,7 +10,7 @@ import FloatingPlayer from './components/FloatingPlayer.vue'
 </script>
 
 <template>
-  <div ref="mainContainer" class="portfolio-wrapper">
+  <div ref="mainContainer" class="portfolio-wrapper" style="">
     <SectionMe />
 
     <div class="main-content-flow relative">
@@ -32,7 +32,9 @@ import FloatingPlayer from './components/FloatingPlayer.vue'
 
 <style scoped>
 .portfolio-wrapper {
-  background: #0f172a; /* Dark theme minimalista [cite: 77] */
+  background: linear-gradient(300deg, var(--primary-color), #252525);
+  transition: 0.3s; /* ease is the default, no need to specify it */
+  transition-property: --primary-color;
   color: #f8fafc;
 }
 
