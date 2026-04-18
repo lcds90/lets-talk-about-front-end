@@ -1,9 +1,9 @@
 {
   "about": {
-    "title": "Leonardo Santos",
-    "subtitle": "Engenheiro de Software Sênior | Tech, Beats & Cats 🐈‍⬛",
-    "p1": "Com **5 anos de experiência** no ecossistema web, foco em construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
-    "p2": "Especialista em **Vue.js**, **Node.js** e **Micro-frontends**, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
+    "title": "Quem sou eu?",
+    "subtitle": "Leonardo Santos, Paulista de 28 anos",
+    "p1": "Com <strong>5 anos de experiência</strong> no ecossistema web, meu foco é construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
+    "p2": "Especialista em <strong>Vue.js</strong>, <strong>Node.js</strong> e <strong>Micro-frontends</strong>, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
     "p3": "Quando não estou otimizando pipelines ou mentorando times, provavelmente estou ouvindo algum lo-fi com meus gatos ou explorando novas sonoridades. 🐾",
     "stats": {
       "stack": "Main Stack",
@@ -19,7 +19,7 @@
     "jobs": [
       {
         "company": "Zenvia",
-        "role": "Engenheiro de Software Sênior (Promovido de Júnior e Pleno)",
+        "role": "Engenheiro de Software Sênior",
         "period": "Nov 2021 - Atual",
         "location": "São Paulo - SP",
         "description": "",
@@ -55,6 +55,7 @@
     "title": "Backstage & Hits (Formação e Certificações) 🎫",
     "academicTitle": "Formação Acadêmica",
     "certsTitle": "Certificações",
+    "view": "Ver Certificado",
     "academic": [
       {
         "course": "Desenvolvimento Web Full Stack",
@@ -78,37 +79,43 @@
       {
         "name": "Web Development",
         "date": "Setembro 2022",
+        "link": "https://www.credential.net/dc358612-94a4-45dd-bac6-f4266d31beb0#acc.bzJY7Z2V",
         "icon": "💻"
       },
       {
         "name": "Computer Science",
         "date": "Agosto 2022",
+        "link": "https://www.credential.net/db1e1e99-3880-47fb-83df-6eac233f01c5#acc.1oIjrk2s",
         "icon": "⚙️"
       },
       {
         "name": "Backend Development",
         "date": "Julho 2022",
+        "link": "https://www.credential.net/e6821d94-0b1c-4816-bdc3-d136948dfa10#acc.eOWbzmMk",
         "icon": "🔌"
       },
       {
         "name": "Frontend Development",
         "date": "Outubro 2021",
+        "link": "https://www.credential.net/a9c25d95-0a70-46f3-8c04-f36349c43875#acc.6P4kXiHy",
         "icon": "🎨"
       },
       {
         "name": "Avanade Angular Developer",
         "date": "Junho 2021",
+        "link": "https://www.dio.me/certificate/BC5A901B/share",
         "icon": "🅰️"
       },
       {
         "name": "Node.JS",
         "date": "Fevereiro 2021",
+        "link": "https://www.udemy.com/certificate/UC-b53c9ab3-80f2-4905-be5c-1da170d5e12b/",
         "icon": "🟢"
       }
     ]
   },
   "contact": {
-    "title": "Vamos fazer um som? 🎧",
+    "title": "Bora se conectar! 🎧",
     "subtitle": "Pronto para orquestrar o próximo grande projeto ou apenas bater um papo sobre tech e gatos.",
     "email_label": "Me mande um e-mail",
     "linkedin_label": "LinkedIn",

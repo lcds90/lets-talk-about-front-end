@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
-        "posts"
+        "posts",
+        "portofolio"
     ],
     "i18n-ally.localesPaths": [
         "src/views/Home/composables/useConversations/i18n"
