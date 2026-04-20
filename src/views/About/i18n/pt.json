@@ -2,8 +2,8 @@
   "about": {
     "title": "Quem sou eu?",
     "subtitle": "Leonardo Santos, Paulista de 28 anos",
-    "p1": "Com <strong>5 anos de experiência</strong> no ecossistema web, meu foco é construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
-    "p2": "Especialista em <strong>Vue.js</strong>, <strong>Node.js</strong> e <strong>Micro-frontends</strong>, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
+    "p1": "Com 5 anos de experiência no ecossistema web, meu foco é construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
+    "p2": "Especialista em Vue.js, Node.js e Micro-frontends, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
     "p3": "Quando não estou vendo sobre tecnologia, provavelmente estou brincando com meus gatos ou explorando novas sonoridades e possibilidades. 🐾",
     "stats": {
       "stack": "Main Stack",
@@ -26,11 +26,11 @@
         "location": "São Paulo - SP",
         "description": "",
         "achievements": [
-          "<strong>Arquitetura e Desenvolvimento Fullstack:</strong> Liderança no desenvolvimento escalável utilizando arquiteturas de Micro-frontends e múltiplos frameworks (Vue 2/3, React, Angular e Node.js). Construção e manutenção do Design System corporativo utilizando Web Components e Stencil.",
-          "<strong>Ferramentas Visuais Complexas:</strong> Arquitetura de um construtor de campanhas multi-projeto sofisticado utilizando bibliotecas de diagramação (GoJS, ReactFlow). Desenvolvimento de uma ferramenta de gestão de anúncios externos integrada com a API do Meta.",
-          "<strong>Liderança Técnica e Estratégia:</strong> Atuação em refinamentos técnicos, análises de viabilidade e PI Plannings. Mentoria de desenvolvedores juniores e criação de processos de onboarding otimizados para aumentar a eficiência da equipe.",
-          "<strong>UX Orientada a Dados e Analytics:</strong> Otimização contínua da experiência do usuário através da implementação de pipelines de coleta de dados. Acompanhamento de KPIs e análise de padrões comportamentais via GA4, Universal Analytics e FullStory para conectar soluções técnicas às metas de negócio.",
-          "<strong>Entrega Ágil:</strong> Influência ativa na direção do produto através de análises de viabilidade e tomada de decisões de negócio. Promoção do alinhamento entre diferentes áreas em cerimônias de PI Planning e elaboração de documentação técnica sobre experimentos analíticos."
+          "Arquitetura e Desenvolvimento Fullstack: Liderança no desenvolvimento escalável utilizando arquiteturas de Micro-frontends e múltiplos frameworks (Vue 2/3, React, Angular e Node.js). Construção e manutenção do Design System corporativo utilizando Web Components e Stencil.",
+          "Ferramentas Visuais Complexas: Arquitetura de um construtor de campanhas multi-projeto sofisticado utilizando bibliotecas de diagramação (GoJS, ReactFlow). Desenvolvimento de uma ferramenta de gestão de anúncios externos integrada com a API do Meta.",
+          "Liderança Técnica e Estratégia: Atuação em refinamentos técnicos, análises de viabilidade e PI Plannings. Mentoria de desenvolvedores juniores e criação de processos de onboarding otimizados para aumentar a eficiência da equipe.",
+          "UX Orientada a Dados e Analytics: Otimização contínua da experiência do usuário através da implementação de pipelines de coleta de dados. Acompanhamento de KPIs e análise de padrões comportamentais via GA4, Universal Analytics e FullStory para conectar soluções técnicas às metas de negócio.",
+          "Entrega Ágil: Influência ativa na direção do produto através de análises de viabilidade e tomada de decisões de negócio. Promoção do alinhamento entre diferentes áreas em cerimônias de PI Planning e elaboração de documentação técnica sobre experimentos analíticos."
         ],
         "hasCat": true
       },
@@ -41,9 +41,9 @@
         "location": "São Paulo - SP",
         "description": "",
         "achievements": [
-          "<strong>Liderança Técnica e Operações:</strong> Estabelecimento e implementação de fluxos de desenvolvimento de software altamente eficazes, gestão de delegação de tarefas e coordenação das atividades da equipe para garantir uma execução fluida.",
-          "<strong>Alinhamento de Produto e Estratégia:</strong> Parceria próxima com o time de Produto para traduzir requisitos de usuários em entregáveis técnicos, garantindo que as soluções atendessem tanto aos objetivos de negócio quanto às necessidades dos usuários.",
-          "<strong>Garantia de Qualidade e Mentoria:</strong> Aplicação de altos padrões de qualidade de código e entregas pontuais através de revisões de código (code reviews) rigorosas e testes. Mentoria direta para resolver impedimentos técnicos complexos e fomentar o crescimento da equipe."
+          "Liderança Técnica e Operações: Estabelecimento e implementação de fluxos de desenvolvimento de software altamente eficazes, gestão de delegação de tarefas e coordenação das atividades da equipe para garantir uma execução fluida.",
+          "Alinhamento de Produto e Estratégia: Parceria próxima com o time de Produto para traduzir requisitos de usuários em entregáveis técnicos, garantindo que as soluções atendessem tanto aos objetivos de negócio quanto às necessidades dos usuários.",
+          "Garantia de Qualidade e Mentoria: Aplicação de altos padrões de qualidade de código e entregas pontuais através de revisões de código (code reviews) rigorosas e testes. Mentoria direta para resolver impedimentos técnicos complexos e fomentar o crescimento da equipe."
         ],
         "hasCat": false
       }

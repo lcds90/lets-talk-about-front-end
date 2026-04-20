@@ -2,8 +2,8 @@
   "about": {
     "title": "Who am I?",
     "subtitle": "Leonardo Santos, 28 years old from São Paulo",
-    "p1": "With <strong>5 years of experience</strong> in the web ecosystem, my focus is building scalable solutions that sound as good as a perfect chord. 🎼",
-    "p2": "An expert in <strong>Vue.js</strong>, <strong>Node.js</strong>, and <strong>Micro-frontends</strong>, my journey at {company} took me from Junior to Senior, refining complex architectures with the precision of someone tuning an instrument. 🎤",
+    "p1": "With 5 years of experience in the web ecosystem, my focus is building scalable solutions that sound as good as a perfect chord. 🎼",
+    "p2": "An expert in Vue.js, Node.js, and Micro-frontends, my journey at {company} took me from Junior to Senior, refining complex architectures with the precision of someone tuning an instrument. 🎤",
     "p3": "When I'm not looking into technology, I'm probably playing with my cats or exploring new sounds and possibilities. 🐾",
     "stats": {
       "stack": "Main Stack",
@@ -26,11 +26,11 @@
         "location": "São Paulo - SP",
         "description": "",
         "achievements": [
-          "<strong>Fullstack Architecture and Development:</strong> Lead in scalable development using Micro-frontend architectures and multiple frameworks (Vue 2/3, React, Angular, and Node.js). Built and maintained the corporate Design System using Web Components and Stencil.",
-          "<strong>Complex Visual Tools:</strong> Architected a sophisticated multi-project campaign builder using diagramming libraries (GoJS, ReactFlow). Developed an external ad management tool integrated with the Meta API.",
-          "<strong>Technical Leadership and Strategy:</strong> Acted in technical refinements, feasibility analyses, and PI Plannings. Mentored junior developers and created optimized onboarding processes to increase team efficiency.",
-          "<strong>Data-Driven UX and Analytics:</strong> Continuous optimization of the user experience through the implementation of data collection pipelines. Tracked KPIs and analyzed behavioral patterns via GA4, Universal Analytics, and FullStory to connect technical solutions to business goals.",
-          "<strong>Agile Delivery:</strong> Active influence on product direction through feasibility analyses and business decision-making. Promoted alignment between different areas in PI Planning ceremonies and elaborated technical documentation on analytical experiments."
+          "Fullstack Architecture and Development: Lead in scalable development using Micro-frontend architectures and multiple frameworks (Vue 2/3, React, Angular, and Node.js). Built and maintained the corporate Design System using Web Components and Stencil.",
+          "Complex Visual Tools: Architected a sophisticated multi-project campaign builder using diagramming libraries (GoJS, ReactFlow). Developed an external ad management tool integrated with the Meta API.",
+          "Technical Leadership and Strategy: Acted in technical refinements, feasibility analyses, and PI Plannings. Mentored junior developers and created optimized onboarding processes to increase team efficiency.",
+          "Data-Driven UX and Analytics: Continuous optimization of the user experience through the implementation of data collection pipelines. Tracked KPIs and analyzed behavioral patterns via GA4, Universal Analytics, and FullStory to connect technical solutions to business goals.",
+          "Agile Delivery: Active influence on product direction through feasibility analyses and business decision-making. Promoted alignment between different areas in PI Planning ceremonies and elaborated technical documentation on analytical experiments."
         ],
         "hasCat": true
       },
@@ -41,9 +41,9 @@
         "location": "São Paulo - SP",
         "description": "",
         "achievements": [
-          "<strong>Technical Leadership and Operations:</strong> Established and implemented highly effective software development workflows, managed task delegation, and coordinated team activities to ensure smooth execution.",
-          "<strong>Product and Strategy Alignment:</strong> Partnered closely with the Product team to translate user requirements into technical deliverables, ensuring solutions met both business objectives and user needs.",
-          "<strong>Quality Assurance and Mentoring:</strong> Enforced high standards of code quality and timely deliveries through rigorous code reviews and testing. Provided direct mentorship to resolve complex technical blockers and foster team growth."
+          "Technical Leadership and Operations: Established and implemented highly effective software development workflows, managed task delegation, and coordinated team activities to ensure smooth execution.",
+          "Product and Strategy Alignment: Partnered closely with the Product team to translate user requirements into technical deliverables, ensuring solutions met both business objectives and user needs.",
+          "Quality Assurance and Mentoring: Enforced high standards of code quality and timely deliveries through rigorous code reviews and testing. Provided direct mentorship to resolve complex technical blockers and foster team growth."
         ],
         "hasCat": false
       }

@@ -223,7 +223,7 @@ onUnmounted(() => {
                 class="flex align-items-start gap-3 text-700 line-height-3 text-lg"
               >
                 <span class="text-primary mt-1"><i class="pi pi-check-circle"></i></span>
-                <span v-html="achievement"></span>
+                <span>{{ rt(achievement) }}</span>
               </li>
             </ul>
           </div>

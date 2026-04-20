@@ -118,12 +118,13 @@ onUnmounted(() => {
       >
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-primary"></div>
 
-        <p class="scroll-reveal text-xl leading-relaxed mb-4 text-600" v-html="t('about.p1')"></p>
+        <p class="scroll-reveal text-xl leading-relaxed mb-4 text-600">
+          {{ t('about.p1') }}
+        </p>
 
-        <p
-          class="scroll-reveal text-xl leading-relaxed mb-4 text-600"
-          v-html="t('about.p2', { company: 'Zenvia' })"
-        ></p>
+        <p class="scroll-reveal text-xl leading-relaxed mb-4 text-600">
+          {{ t('about.p2', { company: 'Zenvia' }) }}
+        </p>
 
         <p class="scroll-reveal text-xl leading-relaxed text-600">
           {{ t('about.p3') }}
