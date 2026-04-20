@@ -17,7 +17,7 @@ import Button from 'primevue/button'
 import Avatar from 'primevue/avatar'
 import Image from 'primevue/image'
 import Tag from 'primevue/tag'
-import Tooltip from 'primevue/tooltip';
+import Tooltip from 'primevue/tooltip'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -27,11 +27,14 @@ import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { pt as ptAbuout } from '../../src/views/About/i18n'
 
 if (!import.meta.env.SSR && typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollToPlugin)
 }
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -76,7 +79,6 @@ export default {
     app.component('Avatar', Avatar)
     app.component('Image', Image)
     app.component('Tag', Tag)
-    app.directive('tooltip', Tooltip);
-
+    app.directive('tooltip', Tooltip)
   },
 } satisfies Theme

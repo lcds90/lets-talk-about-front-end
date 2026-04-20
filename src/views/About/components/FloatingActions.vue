@@ -1,22 +1,27 @@
 <script setup lang="ts">
 import { useRouter } from 'vitepress'
-
-// Instancia o router oficial do VitePress
+import { gsap } from 'gsap'
 const router = useRouter()
 
-// 1. Volta ao topo suavemente
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  gsap.to(window, {
+    duration: 5,
+    scrollTo: 700,
+    ease: 'power3.inOut',
+  })
 }
 
-// 2. Rola suavemente até o final da página
 const scrollToBottom = () => {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+  const totalHeight = document.documentElement.scrollHeight
+
+  gsap.to(window, {
+    duration: 5,
+    scrollTo: totalHeight,
+    ease: 'power2.inOut',
+  })
 }
 
-// 3. Redireciona para a página de contato via Router (SPA) sem reload
 const goToContact = () => {
-  // Ajuste a string para a rota exata da sua página de contato ou posts
   router.go('/posts/')
 }
 </script>
@@ -58,15 +63,13 @@ const goToContact = () => {
 </template>
 
 <style scoped>
-/* === DOCK E MENU FLUTUANTE === */
-
 .floating-dock {
-  z-index: 1000; /* Garante que fique acima de todos os painéis horizontais */
+  z-index: 1000;
 }
 
 .nav-dock {
-  background: rgba(30, 41, 59, 0.6); /* Fundo escuro semitransparente */
-  backdrop-filter: blur(12px); /* Efeito de vidro */
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 

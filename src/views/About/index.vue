@@ -7,12 +7,7 @@ import SectionContact from './components/SectionContact.vue'
 import SectionIntro from './components/SectionIntro.vue'
 import SectionCertifications from './components/SectionCertifications.vue'
 import FloatingPlayer from './components/FloatingPlayer.vue'
-import { onMounted } from 'vue'
 import FloatingActions from './components/FloatingActions.vue'
-
-onMounted(() => {
-  document.body.scrollTo(0, 0)
-})
 </script>
 
 <template>
