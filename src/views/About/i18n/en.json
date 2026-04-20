@@ -1,0 +1,146 @@
+{
+  "about": {
+    "title": "Who am I?",
+    "subtitle": "Leonardo Santos, 28 years old from São Paulo",
+    "p1": "With <strong>5 years of experience</strong> in the web ecosystem, my focus is building scalable solutions that sound as good as a perfect chord. 🎼",
+    "p2": "An expert in <strong>Vue.js</strong>, <strong>Node.js</strong>, and <strong>Micro-frontends</strong>, my journey at {company} took me from Junior to Senior, refining complex architectures with the precision of someone tuning an instrument. 🎤",
+    "p3": "When I'm not looking into technology, I'm probably playing with my cats or exploring new sounds and possibilities. 🐾",
+    "stats": {
+      "stack": "Main Stack",
+      "stack_desc": "Vue 3, Node.js & TypeScript 💻",
+      "vibe": "Vibe",
+      "vibe_desc": "Music Production 🎹🐈",
+      "focus": "Current Focus",
+      "focus_desc": "Vue, GSAP and Three.JS 🏗️"
+    }
+  },
+  "experience": {
+    "title": "Professional Experience 🎤",
+    "jobs": [
+      {
+        "company": "Zenvia",
+        "role": "Senior Software Engineer",
+        "period": "Nov 2021 - Present",
+        "location": "São Paulo - SP",
+        "description": "",
+        "achievements": [
+          "<strong>Fullstack Architecture and Development:</strong> Lead in scalable development using Micro-frontend architectures and multiple frameworks (Vue 2/3, React, Angular, and Node.js). Built and maintained the corporate Design System using Web Components and Stencil.",
+          "<strong>Complex Visual Tools:</strong> Architected a sophisticated multi-project campaign builder using diagramming libraries (GoJS, ReactFlow). Developed an external ad management tool integrated with the Meta API.",
+          "<strong>Technical Leadership and Strategy:</strong> Acted in technical refinements, feasibility analyses, and PI Plannings. Mentored junior developers and created optimized onboarding processes to increase team efficiency.",
+          "<strong>Data-Driven UX and Analytics:</strong> Continuous optimization of the user experience through the implementation of data collection pipelines. Tracked KPIs and analyzed behavioral patterns via GA4, Universal Analytics, and FullStory to connect technical solutions to business goals.",
+          "<strong>Agile Delivery:</strong> Active influence on product direction through feasibility analyses and business decision-making. Promoted alignment between different areas in PI Planning ceremonies and elaborated technical documentation on analytical experiments."
+        ],
+        "hasCat": true
+      },
+      {
+        "company": "Lacrei Saúde",
+        "role": "Tech Lead (Volunteer)",
+        "period": "Jan 2023 - Jun 2023",
+        "location": "São Paulo - SP",
+        "description": "",
+        "achievements": [
+          "<strong>Technical Leadership and Operations:</strong> Established and implemented highly effective software development workflows, managed task delegation, and coordinated team activities to ensure smooth execution.",
+          "<strong>Product and Strategy Alignment:</strong> Partnered closely with the Product team to translate user requirements into technical deliverables, ensuring solutions met both business objectives and user needs.",
+          "<strong>Quality Assurance and Mentoring:</strong> Enforced high standards of code quality and timely deliveries through rigorous code reviews and testing. Provided direct mentorship to resolve complex technical blockers and foster team growth."
+        ],
+        "hasCat": false
+      }
+    ]
+  },
+  "hero": {
+    "name": "Leonardo Santos",
+    "role": "Senior Developer | Tech, Beats & Cats 🐈‍⬛"
+  },
+  "education": {
+    "title": "Education & Certifications 🎫",
+    "academicTitle": "Academic Background",
+    "certsTitle": "Certifications",
+    "view": "View Certificate",
+    "academic": [
+      {
+        "course": "Full Stack Web Development",
+        "institution": "Trybe",
+        "period": "2021 - 2022",
+        "description": "Intensive training with over 1,500 hours of practical projects, covering fundamentals of Front-end and Back-end Development, Computer Science, and Software Engineering."
+      },
+      {
+        "course": "Internet Systems",
+        "institution": "Uninove*",
+        "period": "2018 - 2020",
+        "description": "Degree focused on web architecture, systems development, database modeling, and interface design for web applications."
+      }
+    ],
+    "certs": [
+      {
+        "name": "Vue.js Professional Certification",
+        "date": "Expected: May 2026",
+        "icon": "🟩"
+      },
+      {
+        "name": "Web Development",
+        "date": "September 2022",
+        "link": "https://www.credential.net/dc358612-94a4-45dd-bac6-f4266d31beb0#acc.bzJY7Z2V",
+        "icon": "💻"
+      },
+      {
+        "name": "Computer Science",
+        "date": "August 2022",
+        "link": "https://www.credential.net/db1e1e99-3880-47fb-83df-6eac233f01c5#acc.1oIjrk2s",
+        "icon": "⚙️"
+      },
+      {
+        "name": "Backend Development",
+        "date": "July 2022",
+        "link": "https://www.credential.net/e6821d94-0b1c-4816-bdc3-d136948dfa10#acc.eOWbzmMk",
+        "icon": "🔌"
+      },
+      {
+        "name": "Frontend Development",
+        "date": "October 2021",
+        "link": "https://www.credential.net/a9c25d95-0a70-46f3-8c04-f36349c43875#acc.6P4kXiHy",
+        "icon": "🎨"
+      },
+      {
+        "name": "Avanade Angular Developer",
+        "date": "June 2021",
+        "link": "https://www.dio.me/certificate/BC5A901B/share",
+        "icon": "🅰️"
+      },
+      {
+        "name": "Node.JS",
+        "date": "February 2021",
+        "link": "https://www.udemy.com/certificate/UC-b53c9ab3-80f2-4905-be5c-1da170d5e12b/",
+        "icon": "🟢"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's connect! 🎧",
+    "subtitle": "Ready to orchestrate the next project together? Say hello! 🚀",
+    "email_label": "Send me an email",
+    "linkedin_label": "LinkedIn",
+    "github_label": "GitHub",
+    "whatsapp_label": "WhatsApp",
+    "music_subtitle": "Listen to my productions:",
+    "youtube_label": "YouTube",
+    "bandlab_label": "BandLab",
+    "suno_label": "Suno AI"
+  },
+  "languages": {
+    "title": "Languages 🎙️",
+    "items": [
+      {
+        "name": "Portuguese",
+        "level": "Native",
+        "flag": "🇧🇷",
+        "description": "Fluent communication to orchestrate any project and lead teams."
+      },
+      {
+        "name": "English",
+        "level": "Intermediate",
+        "flag": "🇺🇸",
+        "description": "Reading docs, pull requests, and daily meetings without missing a beat."
+      }
+    ]
+  }
+}

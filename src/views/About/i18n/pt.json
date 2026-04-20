@@ -4,7 +4,7 @@
     "subtitle": "Leonardo Santos, Paulista de 28 anos",
     "p1": "Com <strong>5 anos de experiência</strong> no ecossistema web, meu foco é construir soluções escaláveis que soam tão bem quanto um acorde perfeito. 🎼",
     "p2": "Especialista em <strong>Vue.js</strong>, <strong>Node.js</strong> e <strong>Micro-frontends</strong>, minha jornada na {company} me levou de Júnior a Sênior, refinando arquiteturas complexas com a precisão de quem afina um instrumento. 🎤",
-    "p3": "Quando não estou vendo sobre tecnologia, provavelmente estou ouvindo brincando com meus gatos ou explorando novas sonoridades e possibilidades. 🐾",
+    "p3": "Quando não estou vendo sobre tecnologia, provavelmente estou brincando com meus gatos ou explorando novas sonoridades e possibilidades. 🐾",
     "stats": {
       "stack": "Main Stack",
       "stack_desc": "Vue 3, Node.js & TypeScript 💻",
@@ -65,7 +65,7 @@
       },
       {
         "course": "Sistemas para Internet",
-        "institution": "Uninove - Universidade Nove de Julho",
+        "institution": "Uninove*",
         "period": "2018 - 2020",
         "description": "Graduação focada em arquitetura web, desenvolvimento de sistemas, modelagem de banco de dados e design de interfaces para aplicações na internet."
       }

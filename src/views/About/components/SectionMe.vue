@@ -26,9 +26,9 @@ onMounted(() => {
       left: '50%',
       scale: 0,
       // --- SETUP INICIAL DA IMAGEM ---
-      backgroundImage: "url('/eu.jpg')",
+      backgroundImage: "url('/eu.png')",
       backgroundRepeat: 'repeat',
-      backgroundSize: '1% 1%', // Começa como um mosaico minúsculo
+      backgroundSize: '10% 10%', // Começa como um mosaico minúsculo
       backgroundPosition: '50% 20%',
       filter: 'brightness(1.5) contrast(1.1)', // Um pouco de "estouro" de luz no início
     })
@@ -69,11 +69,11 @@ onMounted(() => {
     tl.to(
       '.hero-content',
       {
-        opacity: 0.75, // Quase desaparece
-        scale: 0.85,
+        opacity: 0.75,
+        scale: 0.5,
         duration: 0.6,
-        x: -400,
-        y: 250,
+        x: -200,
+        y: 200,
       },
       0
     )
@@ -122,7 +122,7 @@ onMounted(() => {
         dotExpand.value,
         {
           // O mosaico se resolve em uma imagem única (cobertura total)
-          backgroundSize: '130% 100%',
+          backgroundSize: '130%',
           // Efeito Ken Burns sutil (foco desliza para uma diagonal)
           backgroundPosition: '60% 40%',
           // Retorna a imagem à cor normal

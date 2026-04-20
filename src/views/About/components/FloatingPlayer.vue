@@ -188,7 +188,7 @@ onUnmounted(() => {
         :class="
           musicStore.isPlaying ? 'is-playing' : 'glass-btn text-300 border-1 border-white-alpha-20'
         "
-        :title="musicStore.isPlaying ? 'Pausar Trilha' : 'Tocar Trilha Instrumental'"
+        :title="musicStore.isPlaying ? 'Pausar trilha' : 'Tocar Trilha Instrumental'"
       >
         <i class="pi text-3xl" :class="musicStore.isPlaying ? 'pi-pause' : 'pi-play'"></i>
       </button>

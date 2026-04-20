@@ -18,10 +18,6 @@ onMounted(() => {
       rotationX: 5,
       duration: 1.2,
       ease: 'elastic.out(1, 0.7)',
-      scrollTrigger: {
-        trigger: '.contact-section',
-        start: 'top 80%',
-      },
     })
 
     // 2. Animação de Entrada em Cascata dos Botões

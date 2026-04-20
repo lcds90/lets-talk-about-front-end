@@ -204,7 +204,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <div class="panel"></div>
+        <div class="panel spacer py-24 px-24"></div>
       </div>
     </div>
   </section>
@@ -235,8 +235,16 @@ onUnmounted(() => {
 }
 
 .panel {
-  height: 100vh;
+  height: 100%;
   min-width: 60vw;
+  overflow: hidden;
+}
+
+.spacer {
+  width: 15rem;
+  height: 15rem;
+  display: block;
+  /* background: red; */
 }
 
 /* Tamanho dos containers de transição */

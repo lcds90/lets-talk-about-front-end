@@ -25,8 +25,6 @@ import FloatingPlayer from './components/FloatingPlayer.vue'
       <SectionCertifications />
       <SectionSummary />
       <SectionContact />
-
-      <div class="spacer py-8"></div>
     </div>
   </div>
 </template>
@@ -37,6 +35,10 @@ import FloatingPlayer from './components/FloatingPlayer.vue'
   transition: 0.3s; /* ease is the default, no need to specify it */
   transition-property: --primary-color;
   color: #f8fafc;
+  width: 100%;
+  max-width: 99cqw;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .main-content-flow {

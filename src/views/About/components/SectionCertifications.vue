@@ -54,7 +54,7 @@ onMounted(() => {
       {
         y: 0, // Posição de aterragem: O local original do CSS
         opacity: 1,
-        duration: 2, // Tempo suficiente para a física do bounce brilhar
+        duration: 1, // Tempo suficiente para a física do bounce brilhar
         ease: 'bounce.out', // Efeito de quique no chão
         stagger: 0.3, // Um card cai a cada 0.15 segundos
         scrollTrigger: {
