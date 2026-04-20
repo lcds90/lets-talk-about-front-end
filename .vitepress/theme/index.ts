@@ -17,6 +17,7 @@ import Button from 'primevue/button'
 import Avatar from 'primevue/avatar'
 import Image from 'primevue/image'
 import Tag from 'primevue/tag'
+import Tooltip from 'primevue/tooltip';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -75,5 +76,7 @@ export default {
     app.component('Avatar', Avatar)
     app.component('Image', Image)
     app.component('Tag', Tag)
+    app.directive('tooltip', Tooltip);
+
   },
 } satisfies Theme

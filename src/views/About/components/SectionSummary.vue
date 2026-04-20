@@ -72,7 +72,6 @@ onMounted(() => {
       },
     })
 
-    // 4. A Escala Musical (As notas flutuando um a um)
     gsap.to('.jump-note', {
       y: -100,
       scale: 1.3, // Crescem quando tocam "no alto"
@@ -91,6 +90,25 @@ onMounted(() => {
         scrub: 1,
       },
     })
+
+    gsap.to('.jump-code', {
+      y: -80,
+      scale: 1.2,
+      rotation: 10,
+      ease: 'sine.inOut',
+      stagger: {
+        each: 0.15,
+        yoyo: true,
+        repeat: 1,
+      },
+      scrollTrigger: {
+        trigger: '.transition-code',
+        containerAnimation: horizontalTween,
+        start: 'left 75%',
+        end: 'right 25%',
+        scrub: 1,
+      },
+    })
   }, horizontalSection.value ?? undefined)
 })
 
@@ -103,29 +121,6 @@ onUnmounted(() => {
   <section ref="horizontalSection" class="horizontal bg-surface-ground">
     <div ref="pinWrap" class="pin-wrap">
       <div ref="animWrap" class="animation-wrap">
-        <!--         <div class="panel intro-panel flex flex-column justify-content-center px-4 md:px-8">
-          <div class="section-header mb-6">
-            <h2 class="text-5xl md:text-7xl font-bold mb-3 flex align-items-center gap-4">
-              <span class="text-primary">{{ t('about.title') }}</span>
-              <span class="music-note inline-block">🎹</span>
-            </h2>
-            <p class="text-xl md:text-2xl text-500 font-medium tracking-wide uppercase">
-              {{ t('about.subtitle') }}
-            </p>
-          </div>
-
-          <div class="glass-panel p-5 border-round-2xl relative overflow-hidden max-w-4xl">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-primary"></div>
-            <p class="text-xl leading-relaxed mb-4 text-300" v-html="t('about.p1')"></p>
-            <p class="text-xl leading-relaxed mb-4 text-300">
-              {{ t('about.p2', { company: 'Zenvia' }) }}
-            </p>
-            <p class="text-xl leading-relaxed text-300">
-              {{ t('about.p3') }}
-            </p>
-          </div>
-        </div> -->
-
         <div class="panel synth-panel flex align-items-center justify-content-center">
           <div
             class="synth-card p-6 border-round-2xl relative flex flex-column align-items-center text-center gap-3 shadow-8 w-20rem"
@@ -187,7 +182,7 @@ onUnmounted(() => {
           <span class="jump-note inline-block">🎵</span>
         </div>
 
-        <div class="panel synth-panel flex align-items-center justify-content-center pr-8 pb-24">
+        <div class="panel synth-panel flex align-items-center justify-content-center pb-24">
           <div
             class="synth-card p-6 border-round-2xl relative flex flex-column align-items-center text-center gap-3 shadow-8 w-20rem"
           >
@@ -204,7 +199,56 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <div class="panel spacer py-24 px-24"></div>
+        <div
+          class="transition-code flex align-items-center justify-content-center gap-4 px-6 text-6xl md:text-7xl w-30vw"
+        >
+          <span class="jump-code inline-block">💻</span>
+          <span class="jump-code inline-block">👨🏽‍💻</span>
+          <span class="jump-code inline-block">📶</span>
+          <span class="jump-code inline-block">🌐</span>
+          <span class="jump-code inline-block">🚀</span>
+        </div>
+
+        <div class="panel synth-panel flex align-items-center justify-content-center">
+          <div
+            class="synth-card p-5 md:p-6 border-round-2xl relative flex flex-column md:flex-row align-items-center justify-content-center gap-5 md:gap-7 shadow-8 w-auto max-w-full"
+          >
+            <div class="flex flex-column align-items-center text-center w-15rem">
+              <div
+                class="led-indicator bg-cyan-500 shadow-cyan h-4rem w-1rem border-round-xl mb-3"
+              ></div>
+
+              <div class="icon-glow text-cyan-400 mb-2">
+                <i class="pi pi-code text-5xl"></i>
+              </div>
+
+              <span class="text-sm text-500 uppercase font-bold tracking-widest mt-2">
+                Linguagens utilizadas
+              </span>
+
+              <a
+                href="https://wakatime.com/@lcds90"
+                target="_blank"
+                class="text-cyan-400 hover:text-cyan-200 transition-colors text-sm font-medium flex align-items-center gap-2 no-underline mt-3 border-1 border-cyan-800 border-round-3xl px-3 py-2"
+              >
+                Ver perfil no WakaTime <i class="pi pi-external-link text-xs"></i>
+              </a>
+            </div>
+
+            <div class="hidden md:block h-10rem border-left-1 border-gray-700"></div>
+
+            <div
+              class="border-round-lg overflow-hidden bg-gray-900 border-1 border-gray-800 flex-shrink-0"
+              style="width: 320px"
+            >
+              <img
+                src="https://camo.githubusercontent.com/d93e830960b9a678db5359a5e1ebb890c4ff94592cfacb5f18e967f39996bac6/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f77616b6174696d653f757365726e616d653d6c6364733930267468656d653d746f6b796f6e69676874266c61796f75743d636f6d70616374"
+                alt="Wakatime Stats"
+                class="w-full block"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -231,7 +275,8 @@ onUnmounted(() => {
   height: 100%;
   align-items: center;
   width: max-content;
-  padding-left: 5vw;
+  padding-left: 10vw;
+  padding-right: 15vw;
 }
 
 .panel {
@@ -338,6 +383,12 @@ onUnmounted(() => {
   box-shadow:
     0 0 15px #10b981,
     0 0 30px #10b981;
+}
+
+.shadow-cyan {
+  box-shadow:
+    0 0 15px #06b6d4,
+    0 0 30px #06b6d4;
 }
 
 .peeking-cat {

@@ -124,7 +124,7 @@ onMounted(() => {
           // O mosaico se resolve em uma imagem única (cobertura total)
           backgroundSize: '130%',
           // Efeito Ken Burns sutil (foco desliza para uma diagonal)
-          backgroundPosition: '60% 40%',
+          backgroundPosition: '65% 40%',
           // Retorna a imagem à cor normal
           filter: 'brightness(1) contrast(1)',
           ease: 'power2.inOut',
@@ -148,16 +148,18 @@ onUnmounted(() => {
     <div ref="dotExpand" class="dot-expander border-circle absolute z-1 shadow-8"></div>
 
     <div class="hero-content text-center px-4 relative z-2">
-      <h1 class="text-6xl md:text-8xl font-bold mb-4 relative">
+      <h1 class="text-3xl md:text-6xl font-bold mb-4 relative">
         {{ t('hero.name') }}
-
+        <span class="nickname text-secondary text-sm font-italic absolute opacity-70">
+          ({{ t('hero.nickname') }})
+        </span>
         <span class="emoji-wrapper inline-block relative">
           <span class="guitar-emoji absolute left-0 top-0 w-full h-full">🎼👨🏽‍💻</span>
           <span ref="markGhost" class="ghost-emoji opacity-0 pointer-events-none">🎼👨🏽‍💻</span>
         </span>
       </h1>
 
-      <p class="text-xl md:text-2xl font-medium tracking-tight mt-6">
+      <p class="text-xl md:text-2xl text-primary font-medium tracking-tight mt-6">
         {{ t('hero.role') }}
       </p>
 
@@ -208,5 +210,10 @@ onUnmounted(() => {
   60% {
     transform: translateY(-6px);
   }
+}
+
+.nickname {
+  bottom: -2rem;
+  left: 0;
 }
 </style>

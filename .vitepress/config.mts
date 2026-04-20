@@ -7,6 +7,8 @@ import eslint from 'vite-plugin-eslint'
 export default defineConfig({
   title: '✨🎨 LCDS',
   description: 'Blog pessoal',
+  base: '/',
+  cleanUrls: true,
   srcDir: 'src',
   head: [
     //   ['script', { async: "true", src: 'https://www.tiktok.com/embed.js' }],

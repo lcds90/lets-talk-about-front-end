@@ -1,0 +1,103 @@
+<script setup lang="ts">
+import { useRouter } from 'vitepress'
+
+// Instancia o router oficial do VitePress
+const router = useRouter()
+
+// 1. Volta ao topo suavemente
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+// 2. Rola suavemente até o final da página
+const scrollToBottom = () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+}
+
+// 3. Redireciona para a página de contato via Router (SPA) sem reload
+const goToContact = () => {
+  // Ajuste a string para a rota exata da sua página de contato ou posts
+  router.go('/posts/')
+}
+</script>
+
+<template>
+  <div class="floating-dock fixed bottom-0 left-0 p-4 flex align-items-center gap-3">
+    <div class="nav-dock flex align-items-center p-2 border-round-3xl shadow-8">
+      <button
+        @click="scrollToTop"
+        class="dock-btn p-link flex align-items-center justify-content-center border-circle transition-all"
+        v-tooltip.top="'Ir para o topo'"
+      >
+        <i class="pi pi-arrow-up text-cyan-400"></i>
+      </button>
+
+      <div class="dock-divider mx-2"></div>
+
+      <button
+        @click="scrollToBottom"
+        class="dock-btn p-link flex align-items-center justify-content-center border-circle transition-all"
+        v-tooltip.top="'Ir para o final'"
+      >
+        <i class="pi pi-arrow-down text-pink-400"></i>
+      </button>
+
+      <div class="dock-divider mx-2"></div>
+
+      <button
+        @click="goToContact"
+        class="dock-btn p-link flex align-items-center justify-content-center border-circle transition-all"
+        v-tooltip.top="'Ver blog'"
+      >
+        <i class="pi pi-book text-emerald-400"></i>
+      </button>
+    </div>
+
+    <div class="music-player-wrapper"></div>
+  </div>
+</template>
+
+<style scoped>
+/* === DOCK E MENU FLUTUANTE === */
+
+.floating-dock {
+  z-index: 1000; /* Garante que fique acima de todos os painéis horizontais */
+}
+
+.nav-dock {
+  background: rgba(30, 41, 59, 0.6); /* Fundo escuro semitransparente */
+  backdrop-filter: blur(12px); /* Efeito de vidro */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dock-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Efeito de hover no fundo do botão */
+.dock-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Efeito Neon nos ícones */
+.dock-btn i {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.dock-btn:hover i {
+  transform: scale(1.15) translateY(-2px);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Linha separadora entre os botões */
+.dock-divider {
+  width: 1px;
+  height: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+}
+</style>
