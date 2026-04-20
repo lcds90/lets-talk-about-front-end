@@ -11,7 +11,9 @@
       "vibe": "Vibe",
       "vibe_desc": "Music Production 🎹🐈",
       "focus": "Current Focus",
-      "focus_desc": "Vue, GSAP and Three.JS 🏗️"
+      "focus_desc": "Vue, GSAP and Three.JS 🏗️",
+      "code": "Programming languages",
+      "code_desc": "View profile on WakaTime"
     }
   },
   "experience": {

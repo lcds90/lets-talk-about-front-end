@@ -223,7 +223,7 @@ onUnmounted(() => {
               </div>
 
               <span class="text-sm text-500 uppercase font-bold tracking-widest mt-2">
-                Linguagens utilizadas
+                {{ t('about.stats.code') }}
               </span>
 
               <a
@@ -231,7 +231,7 @@ onUnmounted(() => {
                 target="_blank"
                 class="text-cyan-400 hover:text-cyan-200 transition-colors text-sm font-medium flex align-items-center gap-2 no-underline mt-3 border-1 border-cyan-800 border-round-3xl px-3 py-2"
               >
-                Ver perfil no WakaTime <i class="pi pi-external-link text-xs"></i>
+                {{ t('about.stats.code_desc') }} <i class="pi pi-external-link text-xs"></i>
               </a>
             </div>
 
