@@ -61,6 +61,9 @@ export default defineConfig({
         '@components': __dirname + '/src/components/',
       },
     },
+    ssr: {
+      noExternal: ['vue-i18n']
+    },
     
     plugins: [eslint({})],
     server: {

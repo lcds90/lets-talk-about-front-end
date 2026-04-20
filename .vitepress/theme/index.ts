@@ -22,52 +22,58 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlayCircle, faUser, faTerminal } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
+import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { pt as ptAbuout } from '../../src/views/About/i18n'
 
-if (window && typeof window !== 'undefined') {
+if (!import.meta.env.SSR && typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 export default {
-    extends: DefaultTheme,
-    Layout: () => {
-        return h(DefaultTheme.Layout, null, {
-            // https://vitepress.dev/guide/extending-default-theme#layout-slots
-        })
-    },
-    enhanceApp({ app, router, siteData }) {
-        const pinia = createPinia()
-        const i18n = createI18n({
-            legacy: false,
-            locale: 'en',
-            fallbackLocale: 'en',
-            messages: {
-                pt: {
-                    ...ptAbuout
-                }
-            },
-            })
-        library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
-        // app.use(createManager())
-        app.use(pinia)
-        app.use(i18n)
-        app.use(PrimeVue, {
-            theme: {
-                preset,
-            },
-        })
-        app.component('font-awesome-icon', FontAwesomeIcon)
-        app.component('FloatLabel', FloatLabel)
-        app.component('InputText', InputText)
-        app.component('Carousel', Carousel)
-        app.component('Toolbar', Toolbar)
-        app.component('Button', Button)
-        app.component('Avatar', Avatar)
-        app.component('Image', Image)
-        app.component('Tag', Tag)
+  extends: DefaultTheme,
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      // https://vitepress.dev/guide/extending-default-theme#layout-slots
+    })
+  },
+  enhanceApp({ app, router, siteData }) {
+    const pinia = createPinia()
+    let i18n
+    if (!import.meta.env.SSR && typeof window !== 'undefined') {
+      i18n = createI18n({
+        legacy: false,
+      })
+    }
+    i18n = createI18n({
+      legacy: false,
+      locale: navigator.language.split('-')[0] || 'en',
+      fallbackLocale: 'en',
+      messages: {
+        pt: {
+          ...ptAbuout,
+        },
+      },
+    })
 
-    },
+    library.add(faInstagram, faTiktok, faYoutube, faPlayCircle, faUser, faTerminal)
+    // app.use(createManager())
+    app.use(pinia)
+    app.use(i18n)
+    app.use(PrimeVue, {
+      theme: {
+        preset,
+      },
+    })
+    app.component('font-awesome-icon', FontAwesomeIcon)
+    app.component('FloatLabel', FloatLabel)
+    app.component('InputText', InputText)
+    app.component('Carousel', Carousel)
+    app.component('Toolbar', Toolbar)
+    app.component('Button', Button)
+    app.component('Avatar', Avatar)
+    app.component('Image', Image)
+    app.component('Tag', Tag)
+  },
 } satisfies Theme

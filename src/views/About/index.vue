@@ -17,9 +17,8 @@ import FloatingPlayer from './components/FloatingPlayer.vue'
       <div class="connection-line-container">
         <div class="connection-line"></div>
       </div>
-      <ClientOnly>
-        <FloatingPlayer />
-      </ClientOnly>
+
+      <FloatingPlayer />
       <SectionIntro />
       <SectionExperience />
       <SectionEducation />

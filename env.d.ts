@@ -10,6 +10,7 @@ declare module '*.vue' {
 
 interface ImportMetaEnv {
   readonly VITE_APP_GRAVATAR_TOKEN: string
+  readonly SSR: boolean
   // more env variables...
 }
 

@@ -66,7 +66,7 @@ export const createPostsVueFlow = ({ botSender }: SenderParams): BaseMessage[] =
       {
         text: 'Ciclo de vida dos componentes Vue',
         payload: 'Postagem de lifecycle vue',
-        onClick: () => window ? window.open('/posts/vue/lifecycle') : null,
+        onClick: () => (window ? window.open('/posts/vue/lifecycle') : null),
       },
     ]),
     botSender,

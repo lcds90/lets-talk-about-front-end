@@ -31,4 +31,6 @@ title: 'Leonardo Conceição dos Santos - Desenvolvedor Front-end'
 import Portfolio from './views/About/index.vue'
 </script>
 
+<client-only>
 <Portfolio />
+</client-only>
