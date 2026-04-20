@@ -52,10 +52,16 @@
     "role": "Senior Developer",
     "nickname": "LCDS"
   },
+  "actions": {
+    "top": "Go to about me",
+    "bottom": "Go to contact",
+    "blog": "View blog"
+  },
   "education": {
     "title": "Education & Certifications 🎫",
     "academicTitle": "Academic Background",
     "certsTitle": "Certifications",
+    "certsDesc": " achievements that validate my stack technique.",
     "view": "View Certificate",
     "academic": [
       {

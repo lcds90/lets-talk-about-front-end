@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vitepress'
 import { gsap } from 'gsap'
+import { useI18n } from 'vue-i18n'
 const router = useRouter()
+const { t } = useI18n()
 
 const scrollToTop = () => {
   gsap.to(window, {
@@ -32,7 +34,7 @@ const goToContact = () => {
       <button
         @click="scrollToTop"
         class="dock-btn p-link flex align-items-center justify-content-center border-circle transition-all"
-        v-tooltip.top="'Ir para o topo'"
+        v-tooltip.top="t('actions.top')"
       >
         <i class="pi pi-arrow-up text-cyan-400"></i>
       </button>
@@ -42,7 +44,7 @@ const goToContact = () => {
       <button
         @click="scrollToBottom"
         class="dock-btn p-link flex align-items-center justify-content-center border-circle transition-all"
-        v-tooltip.top="'Ir para o final'"
+        v-tooltip.top="t('actions.bottom')"
       >
         <i class="pi pi-arrow-down text-pink-400"></i>
       </button>
@@ -52,7 +54,7 @@ const goToContact = () => {
       <button
         @click="goToContact"
         class="dock-btn p-link flex align-items-center justify-content-center border-circle transition-all"
-        v-tooltip.top="'Ver blog'"
+        v-tooltip.top="t('actions.blog')"
       >
         <i class="pi pi-book text-emerald-400"></i>
       </button>

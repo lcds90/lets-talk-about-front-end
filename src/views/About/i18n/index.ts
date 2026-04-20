@@ -1,2 +1,3 @@
 import pt from './pt.json'
-export { pt }
+import en from './en.json'
+export { en, pt }

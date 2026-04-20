@@ -28,7 +28,7 @@ import 'primeflex/primeflex.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
-import { pt as ptAbuout } from '../../src/views/About/i18n'
+import { en as enAbout, pt as ptAbuout } from '../../src/views/About/i18n'
 
 if (!import.meta.env.SSR && typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -55,6 +55,9 @@ export default {
       locale: navigator.language.split('-')[0] || 'en',
       fallbackLocale: 'en',
       messages: {
+        en: {
+          ...enAbout,
+        },
         pt: {
           ...ptAbuout,
         },

@@ -92,7 +92,7 @@ onUnmounted(() => {
         style="font-family: 'Libre Baskerville', serif"
       >
         <span class="font-bold text-primary">{{ t('education.certsTitle') }}</span>
-        <span class="text-white"> conquistas que validam a minha stack técnica.</span>
+        <span class="text-white"> {{ t('education.certsDesc') }}</span>
       </div>
     </section>
 
